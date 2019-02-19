@@ -1,0 +1,78 @@
+$font-family-sans-serif: 'Open Sans', -apple-system, blinkmacsystemfont,
+	'Segoe UI', roboto, 'Helvetica Neue', arial, sans-serif, 'Apple Color Emoji',
+	'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji' !default;
+$font-family-monospace: 'Inconsolata', sfmono-regular, menlo, monaco, consolas,
+	'Liberation Mono', 'Courier New', monospace !default;
+$font-family-base: $font-family-sans-serif !default;
+
+$font-size-base: 1rem !default;
+$font-size-xs: ($font-size-base * 0.75) !default;
+$font-size-sm: ($font-size-base * 0.875) !default;
+$font-size-lg: ($font-size-base * 1.25) !default;
+$font-size-xl: ($font-size-base * 1.5) !default;
+
+$font-weight-lighter: 200 !default;
+$font-weight-light: 300 !default;
+$font-weight-normal: 400 !default;
+$font-weight-semibold: 600 !default;
+$font-weight-bold: 700 !default;
+$font-weight-base: $font-weight-light !default;
+
+$line-height-base: 1.5 !default;
+
+$line-height-sm: 1.5 !default;
+$line-height-xs: 1 !default;
+$line-height-lg: 1.5 !default;
+$line-height-xl: 1.5 !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$headings-margin-bottom: 0.5rem !default;
+$headings-font-family: inherit !default;
+$headings-font-weight: $font-weight-semibold !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 2 !default;
+$h3-font-size: $font-size-base * 1.75 !default;
+$h4-font-size: $font-size-base * 1.5 !default;
+$h5-font-size: $font-size-base * 1.25 !default;
+$h6-font-size: $font-size-base !default;
+
+$display1-size: 6rem !default;
+$display2-size: 5.5rem !default;
+$display3-size: 4.5rem !default;
+$display4-size: 3.5rem !default;
+
+$display1-weight: 300 !default;
+$display2-weight: 300 !default;
+$display3-weight: 300 !default;
+$display4-weight: 300 !default;
+$display-line-height: $headings-line-height !default;
+
+$lead-font-size: ($font-size-base * 1.25) !default;
+$lead-font-weight: 300 !default;
+
+$small-font-size: 80% !default;
+
+$text-muted: $gray-600 !default;
+
+$blockquote-small-color: $gray-600 !default;
+$blockquote-font-size: ($font-size-base * 1.25) !default;
+
+$hr-border-color: rgba($black, 0.1) !default;
+$hr-border-width: $border-width !default;
+
+$mark-padding: 0.2em !default;
+
+$dt-font-weight: $font-weight-bold !default;
+
+$kbd-box-shadow: inset 0 -0.1rem 0 rgba($black, 0.25) !default;
+$nested-kbd-font-weight: $font-weight-bold !default;
+
+$list-inline-padding: 0.5rem !default;
+
+$mark-bg: $gray-100 !default;
+
+$hr-margin-y: 1rem !default;

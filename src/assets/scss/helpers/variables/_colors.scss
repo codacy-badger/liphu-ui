@@ -1,0 +1,282 @@
+//Grays
+$white: #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #ebedf0 !default;
+$gray-300: #dde0e5 !default;
+$gray-400: #ced3d9 !default;
+$gray-500: #abb3be !default;
+$gray-600: #636c7b !default;
+$gray-700: #484e59 !default;
+$gray-800: #3a3f48 !default;
+$gray-900: #23262b !default;
+$black: #15161a !default;
+
+//Colors
+$primary: #3b79db !default;
+$success: #16cd97 !default;
+$warning: #fabe46 !default;
+$danger: #fe686f !default;
+$info: #599eff !default;
+$pink: #f44d66 !default;
+$purple: #673ab7 !default;
+$indigo: #3f51b5 !default;
+
+$light: $gray-100 !default;
+$dark: $gray-800 !default;
+$darker: $gray-800 !default;
+$secondary: $gray-600 !default;
+$disabled: $gray-500 !default;
+$text-muted: $gray-600 !default;
+
+$primary-darker: mix($black, $primary, 50) !default;
+$primary-dark: mix($black, $primary, 20) !default;
+$primary-dark-alt: mix($black, $primary, 40) !default;
+$primary-secondary: mix($white, $primary, 10) !default;
+$primary-tertiary: mix($white, $primary, 20) !default;
+$primary-light: mix($white, $primary, 70) !default;
+$primary-lighter: mix($white, $primary, 90) !default;
+$primary-lighter-alt: mix($white, $primary, 80) !default;
+
+$success-darker: mix($black, $success, 50) !default;
+$success-dark: mix($black, $success, 20) !default;
+$success-dark-alt: mix($black, $success, 40) !default;
+$success-secondary: mix($white, $success, 10) !default;
+$success-tertiary: mix($white, $success, 20) !default;
+$success-light: mix($white, $success, 70) !default;
+$success-lighter: mix($white, $success, 90) !default;
+$success-lighter-alt: mix($white, $success, 80) !default;
+
+$warning-darker: mix($black, $warning, 50) !default;
+$warning-dark: mix($black, $warning, 20) !default;
+$warning-dark-alt: mix($black, $warning, 40) !default;
+$warning-secondary: mix($white, $warning, 10) !default;
+$warning-tertiary: mix($white, $warning, 20) !default;
+$warning-light: mix($white, $warning, 70) !default;
+$warning-lighter: mix($white, $warning, 90) !default;
+$warning-lighter-alt: mix($white, $warning, 80) !default;
+
+$danger-darker: mix($black, $danger, 50) !default;
+$danger-dark: mix($black, $danger, 20) !default;
+$danger-dark-alt: mix($black, $danger, 40) !default;
+$danger-secondary: mix($white, $danger, 10) !default;
+$danger-tertiary: mix($white, $danger, 20) !default;
+$danger-light: mix($white, $danger, 70) !default;
+$danger-lighter: mix($white, $danger, 90) !default;
+$danger-lighter-alt: mix($white, $danger, 80) !default;
+
+$info-darker: mix($black, $info, 50) !default;
+$info-dark: mix($black, $info, 20) !default;
+$info-dark-alt: mix($black, $info, 40) !default;
+$info-secondary: mix($white, $info, 10) !default;
+$info-tertiary: mix($white, $info, 20) !default;
+$info-light: mix($white, $info, 70) !default;
+$info-lighter: mix($white, $info, 90) !default;
+$info-lighter-alt: mix($white, $info, 80) !default;
+
+$pink-darker: mix($black, $pink, 50) !default;
+$pink-dark: mix($black, $pink, 20) !default;
+$pink-dark-alt: mix($black, $pink, 40) !default;
+$pink-secondary: mix($white, $pink, 10) !default;
+$pink-tertiary: mix($white, $pink, 20) !default;
+$pink-light: mix($white, $pink, 70) !default;
+$pink-lighter: mix($white, $pink, 90) !default;
+$pink-lighter-alt: mix($white, $pink, 80) !default;
+
+$indigo-darker: mix($black, $indigo, 50) !default;
+$indigo-dark: mix($black, $indigo, 20) !default;
+$indigo-dark-alt: mix($black, $indigo, 40) !default;
+$indigo-secondary: mix($white, $indigo, 10) !default;
+$indigo-tertiary: mix($white, $indigo, 20) !default;
+$indigo-light: mix($white, $indigo, 70) !default;
+$indigo-lighter: mix($white, $indigo, 90) !default;
+$indigo-lighter-alt: mix($white, $indigo, 80) !default;
+
+$purple-darker: mix($black, $purple, 50) !default;
+$purple-dark: mix($black, $purple, 20) !default;
+$purple-dark-alt: mix($black, $purple, 40) !default;
+$purple-secondary: mix($white, $purple, 10) !default;
+$purple-tertiary: mix($white, $purple, 20) !default;
+$purple-light: mix($white, $purple, 70) !default;
+$purple-lighter: mix($white, $purple, 90) !default;
+$purple-lighter-alt: mix($white, $info, 80) !default;
+
+//Themes
+$theme-colors: (
+	'primary-darker': $primary-darker,
+	'primary-dark': $primary-dark,
+	'primary-dark-alt': $primary-dark-alt,
+	'primary': $primary,
+	'primary-secondary': $primary-secondary,
+	'primary-tertiary': $primary-tertiary,
+	'primary-light': $primary-light,
+	'primary-lighter': $primary-lighter,
+	'primary-lighter-alt': $primary-lighter-alt,
+	'success-darker': $success-darker,
+	'success-dark': $success-dark,
+	'success-dark-alt': $success-dark-alt,
+	'success': $success,
+	'success-secondary': $success-secondary,
+	'success-tertiary': $success-tertiary,
+	'success-light': $success-light,
+	'success-lighter': $success-lighter,
+	'success-lighter-alt': $success-lighter-alt,
+	'warning-darker': $warning-darker,
+	'warning-dark': $warning-dark,
+	'warning-dark-alt': $warning-dark-alt,
+	'warning': $warning,
+	'warning-secondary': $warning-secondary,
+	'warning-tertiary': $warning-tertiary,
+	'warning-light': $warning-light,
+	'warning-lighter': $warning-lighter,
+	'warning-lighter-alt': $warning-lighter-alt,
+	'danger-darker': $danger-darker,
+	'danger-dark': $danger-dark,
+	'danger-dark-alt': $danger-dark-alt,
+	'danger': $danger,
+	'danger-secondary': $danger-secondary,
+	'danger-tertiary': $danger-tertiary,
+	'danger-light': $danger-light,
+	'danger-lighter': $danger-lighter,
+	'danger-lighter-alt': $danger-lighter-alt,
+	'info-darker': $info-darker,
+	'info-dark': $info-dark,
+	'info-dark-alt': $info-dark-alt,
+	'info': $info,
+	'info-secondary': $info-secondary,
+	'info-tertiary': $info-tertiary,
+	'info-light': $info-light,
+	'info-lighter': $info-lighter,
+	'info-lighter-alt': $info-lighter-alt,
+	'pink-darker': $pink-darker,
+	'pink-dark': $pink-dark,
+	'pink-dark-alt': $pink-dark-alt,
+	'pink': $pink,
+	'pink-secondary': $pink-secondary,
+	'pink-tertiary': $pink-tertiary,
+	'pink-light': $pink-light,
+	'pink-lighter': $pink-lighter,
+	'pink-lighter-alt': $pink-lighter-alt,
+	'indigo-darker': $indigo-darker,
+	'indigo-dark': $indigo-dark,
+	'indigo-dark-alt': $indigo-dark-alt,
+	'indigo': $indigo,
+	'indigo-secondary': $indigo-secondary,
+	'indigo-tertiary': $indigo-tertiary,
+	'indigo-light': $indigo-light,
+	'indigo-lighter': $indigo-lighter,
+	'indigo-lighter-alt': $purple-lighter-alt,
+	'purple-darker': $purple-darker,
+	'purple-dark': $purple-dark,
+	'purple-dark-alt': $purple-dark-alt,
+	'purple': $purple,
+	'purple-secondary': $purple-secondary,
+	'purple-tertiary': $purple-tertiary,
+	'purple-light': $purple-light,
+	'purple-lighter': $purple-lighter,
+	'purple-lighter-alt': $purple-lighter-alt,
+	'light': $light,
+	'dark': $dark,
+	'darker': $darker,
+	'secondary': $secondary,
+	'disabled': $disabled
+) !default;
+
+//Links
+$link-color: $primary-secondary !default;
+$link-hover-color: $primary-dark !default;
+$link-decoration: none !default;
+$link-hover-decoration: none !default;
+
+//Body
+$body-bg: $gray-100 !default;
+$body-color: $gray-700 !default;
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold: 210 !default;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark: $body-color !default;
+$yiq-text-light: $white !default;
+
+// Components
+$border-color: $gray-300 !default;
+
+:export {
+	primary-darker: $primary-darker;
+	primary-dark: $primary-dark;
+	primary-dark-alt: $primary-dark-alt;
+	primary: $primary;
+	primary-secondary: $primary-secondary;
+	primary-tertiary: $primary-tertiary;
+	primary-light: $primary-light;
+	primary-lighter: $primary-lighter;
+	primary-lighter-alt: $primary-lighter-alt;
+	success-darker: $success-darker;
+	success-dark: $success-dark;
+	success-dark-alt: $success-dark-alt;
+	success: $success;
+	success-secondary: $success-secondary;
+	success-tertiary: $success-tertiary;
+	success-light: $success-light;
+	success-lighter: $success-lighter;
+	success-lighter-alt: $success-lighter-alt;
+	warning-darker: $warning-darker;
+	warning-dark: $warning-dark;
+	warning-dark-alt: $warning-dark-alt;
+	warning: $warning;
+	warning-secondary: $warning-secondary;
+	warning-tertiary: $warning-tertiary;
+	warning-light: $warning-light;
+	warning-lighter: $warning-lighter;
+	warning-lighter-alt: $warning-lighter-alt;
+	danger-darker: $danger-darker;
+	danger-dark: $danger-dark;
+	danger-dark-alt: $danger-dark-alt;
+	danger: $danger;
+	danger-secondary: $danger-secondary;
+	danger-tertiary: $danger-tertiary;
+	danger-light: $danger-light;
+	danger-lighter: $danger-lighter;
+	danger-lighter-alt: $danger-lighter-alt;
+	info-darker: $info-darker;
+	info-dark: $info-dark;
+	info-dark-alt: $info-dark-alt;
+	info: $info;
+	info-secondary: $info-secondary;
+	info-tertiary: $info-tertiary;
+	info-light: $info-light;
+	info-lighter: $info-lighter;
+	info-lighter-alt: $info-lighter-alt;
+	pink-darker: $pink-darker;
+	pink-dark: $pink-dark;
+	pink-dark-alt: $pink-dark-alt;
+	pink: $pink;
+	pink-secondary: $pink-secondary;
+	pink-tertiary: $pink-tertiary;
+	pink-light: $pink-light;
+	pink-lighter: $pink-lighter;
+	pink-lighter-alt: $pink-lighter-alt;
+	indigo-darker: $indigo-darker;
+	indigo-dark: $indigo-dark;
+	indigo-dark-alt: $indigo-dark-alt;
+	indigo: $indigo;
+	indigo-secondary: $indigo-secondary;
+	indigo-tertiary: $indigo-tertiary;
+	indigo-light: $indigo-light;
+	indigo-lighter: $indigo-lighter;
+	indigo-lighter-alt: $purple-lighter-alt;
+	purple-darker: $purple-darker;
+	purple-dark: $purple-dark;
+	purple-dark-alt: $purple-dark-alt;
+	purple: $purple;
+	purple-secondary: $purple-secondary;
+	purple-tertiary: $purple-tertiary;
+	purple-light: $purple-light;
+	purple-lighter: $purple-lighter;
+	purple-lighter-alt: $purple-lighter-alt;
+	light: $light;
+	dark: $dark;
+	darker: $darker;
+	secondary: $secondary;
+	disabled: $disabled;
+}

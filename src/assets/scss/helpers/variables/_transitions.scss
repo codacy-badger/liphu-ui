@@ -1,0 +1,15 @@
+$transition-base: all 0.2s ease-in-out !default;
+$transition-fade-linear: opacity 0.15s linear !default;
+$transition-fade: opacity 0.15s ease-in-out !default;
+$transition-collapse: height 0.35s ease !default;
+
+$btn-transition: all 0.15s ease-in-out !default;
+$input-transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$custom-forms-transition: background-color 0.15s ease-in-out,
+	border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !default;
+$modal-transition: transform 0.3s ease-out !default;
+$progress-bar-transition: width 0.6s ease !default;
+$carousel-transition: transform 0.6s ease !default;
+
+$transition-transform: transform 0.2s ease-in-out, opacity 0.2s ease-in-out !default;
+$transition-width: width 0.35s ease !default;

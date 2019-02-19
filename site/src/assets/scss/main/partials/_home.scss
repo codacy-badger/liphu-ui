@@ -1,0 +1,68 @@
+.home-banner-wrapper {
+	position: relative;
+
+	@include media-breakpoint-up(md, $grid-breakpoints) {
+		background: url('../images/home-banner-bg.png');
+		background-size: cover;
+		background-position: center right;
+		background-repeat: no-repeat;
+	}
+
+	svg {
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		height: 5vw;
+	}
+
+	.home-banner {
+		margin: 0 auto;
+		padding: 0;
+		width: 100%;
+		max-width: map-get($container-max-widths, xl);
+		min-height: map-get($container-max-widths, md);
+		align-items: center;
+		flex-flow: row;
+
+		h1 {
+			font-size: $font-size-lg * 3;
+			font-weight: $font-weight-light;
+			margin-bottom: 1rem;
+			line-height: $line-height-base;
+			color: $primary;
+		}
+
+		p {
+			font-size: $font-size-lg;
+			line-height: 2;
+		}
+
+		img {
+			max-width: 100%;
+		}
+
+		@include media-breakpoint-down(md, $grid-breakpoints) {
+			flex-flow: column;
+			text-align: center;
+
+			&:before {
+				content: '';
+				position: absolute;
+				background: rgba($primary, 0.1);
+				width: 100%;
+				height: 50%;
+				top: 0;
+				left: 0;
+				right: 0;
+			}
+
+			h1 {
+				display: none;
+			}
+
+			p {
+				font-size: inherit;
+			}
+		}
+	}
+}

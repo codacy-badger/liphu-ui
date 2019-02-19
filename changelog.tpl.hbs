@@ -1,0 +1,62 @@
+<p align="center"><a href="https://github.com/LiphuCL/liphu-ui"><img width="85px" src="https://avatars3.githubusercontent.com/u/44595172?s=400&u=e713dde8a32c8b9f4da44c218962a1bc26ea746c&v=4" /></a></p>
+
+<p align="center">
+<a href="https://travis-ci.com/LiphuCL/liphu-ui"><img src="https://img.shields.io/travis/com/LiphuCL/liphu-ui/master.svg?&style=flat&colorB=16CD97" alt="build status" height="20"></a>
+<a href="https://github.com/LiphuCL/liphu-ui/issues"><img src="https://img.shields.io/github/issues/LiphuCL/liphu-ui.svg?&style=flat&colorB=fabe46" alt="issues open" height="20"></a>
+<img src="https://img.shields.io/badge/commits%20to%20be%20deployed-{{ releases.[0].commits.length }}-3b79db.svg" alt="commits to be deployed">
+<a href="https://www.npmjs.com/package/@liphu/liphu-ui"><img src="https://img.shields.io/npm/v/@liphu/liphu-ui.svg?colorB=3b79db" alt="npm version" height="20"></a>
+<a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-3f51b5.svg" alt="license" height="20"></a>
+</p>
+
+# Liphu-UI - Changelog
+
+All notable changes to this project will be documented in this file. :grin:
+
+The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
+and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
+
+{{#each releases}}
+  {{#if href}}
+    ## [{{title}}]({{href}}){{#if tag}} - {{niceDate}}{{/if}}
+  {{else}}
+    ## {{title}}{{#if tag}} - {{niceDate}}{{/if}}
+  {{/if}}
+ 
+  {{! List commits with `Breaking change: ` somewhere in the message }}
+  {{#commit-list commits heading='### Breaking Changes' message='Breaking change: '}}
+    - :fire: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{! List commits that add new features, but not those already listed above }}
+  {{#commit-list commits heading='### Added' message='Added: ' exclude='Breaking change: '}}
+    - :star2: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### Changed' message='Changed: ' exclude='Breaking change: '}}
+    - :pencil2: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### Deprecated' message='Deprecated: ' exclude='Breaking change: '}}
+    - :no_good: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### Removed' message='Removed: ' exclude='Breaking change: '}}
+    - :hocho: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### Bug Fixes' message='Fixed: ' exclude='Breaking change: '}}
+    - :beetle: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### Security' message='Security: ' exclude='Breaking change: '}}
+    - :shipit: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+
+  {{#commit-list commits heading='### Refactor' message='Refactor: ' exclude='Breaking change: '}}
+    - :nail_care: {{subject}} [`{{shorthash}}`]({{href}})
+  {{/commit-list}}
+  
+{{/each}}
+
+---
+<sub><sup>*This is an auto generated changelog. If you have any problems or suggestions, create an issue.* :blush: **Thanks** </sub></sup>

@@ -1,0 +1,138 @@
+// Text
+.text-monospace {
+	font-family: $font-family-monospace;
+}
+
+// Alignment
+.text-justify {
+	text-align: justify !important;
+}
+
+.text-nowrap {
+	white-space: nowrap !important;
+}
+
+.text-truncate {
+	@include text-truncate;
+}
+
+// Responsive alignment
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.text#{$infix}-left {
+			text-align: left !important;
+		}
+
+		.text#{$infix}-right {
+			text-align: right !important;
+		}
+
+		.text#{$infix}-center {
+			text-align: center !important;
+		}
+	}
+}
+
+// Transformation
+.text-lowercase {
+	text-transform: lowercase !important;
+}
+
+.text-uppercase {
+	text-transform: uppercase !important;
+}
+
+.text-capitalize {
+	text-transform: capitalize !important;
+}
+
+// Weight and italics
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.fw#{$infix}-lighter {
+			font-weight: $font-weight-lighter !important;
+		}
+
+		.fw#{$infix}-light {
+			font-weight: $font-weight-light !important;
+		}
+
+		.fw#{$infix}-normal {
+			font-weight: $font-weight-normal !important;
+		}
+
+		.fw#{$infix}-semibold {
+			font-weight: $font-weight-bold !important;
+		}
+
+		.fw#{$infix}-bold {
+			font-weight: $font-weight-bold !important;
+		}
+	}
+}
+
+.italic {
+	font-style: italic !important;
+}
+
+//Sizes
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+
+		.fs#{$infix}-xs {
+			font-size: $font-size-xs;
+		}
+
+		.fs#{$infix}-sm {
+			font-size: $font-size-sm;
+		}
+
+		.fs#{$infix}-base {
+			font-size: $font-size-base;
+		}
+
+		.fs#{$infix}-lg {
+			font-size: $font-size-lg;
+		}
+
+		.fs#{$infix}-xl {
+			font-size: $font-size-xl;
+		}
+	}
+}
+
+// Contextual colors
+.text-white {
+	color: $white !important;
+}
+
+@each $color, $value in $theme-colors {
+	@include text-emphasis-variant('.text-#{$color}', $value);
+}
+
+.text-body {
+	color: $body-color !important;
+}
+
+.text-muted {
+	color: $text-muted !important;
+}
+
+.text-black-50 {
+	color: rgba($black, 0.5) !important;
+}
+
+.text-white-50 {
+	color: rgba($white, 0.5) !important;
+}
+
+// Misc
+.text-hide {
+	@include text-hide($ignore-warning: true);
+}

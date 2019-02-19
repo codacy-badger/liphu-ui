@@ -1,0 +1,35 @@
+.#{$css-prefix}-layout {
+	display: flex;
+	flex: auto;
+	flex-direction: column;
+
+	&-horizontal {
+		flex-direction: row;
+	}
+
+	&-vertical {
+		flex-direction: column;
+	}
+}
+
+.#{$css-prefix}-header,
+.#{$css-prefix}-footer {
+	flex: 0 0 auto;
+}
+
+.#{$css-prefix}-content {
+	flex: auto;
+}
+
+.#{$css-prefix}-aside {
+	overflow: auto;
+	min-width: 0;
+
+	@include transition($transition-base);
+
+	&-content {
+		height: 100%;
+		padding: 0;
+		margin: 0;
+	}
+}

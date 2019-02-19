@@ -1,0 +1,120 @@
+// Linear fade transition
+.fade-linear-enter-active,
+.fade-linear-leave-active {
+	transition: $transition-fade-linear;
+}
+
+.fade-linear-enter,
+.fade-linear-leave,
+.fade-linear-leave-active {
+	opacity: 0;
+}
+
+// Fade transition
+.fade-enter-active,
+.fade-leave-active {
+	transition: $transition-fade;
+}
+
+.fade-enter,
+.fade-leave-active {
+	opacity: 0;
+}
+
+// Zoom in center transition
+.zoom-in-center-enter-active,
+.zoom-in-center-leave-active {
+	transition: $transition-transform;
+}
+
+.zoom-in-center-enter,
+.zoom-in-center-leave-active {
+	opacity: 0;
+	transform: scaleX(0);
+}
+
+// Zoom in top transition
+.zoom-in-top-enter-active,
+.zoom-in-top-leave-active {
+	opacity: 1;
+	transform: scaleY(1);
+	transition: $transition-transform;
+	transform-origin: center top;
+}
+
+.zoom-in-top-enter,
+.zoom-in-top-leave-active {
+	opacity: 0;
+	transform: scaleY(0);
+}
+
+// Zoom in bottom transition
+.zoom-in-bottom-enter-active,
+.zoom-in-bottom-leave-active {
+	opacity: 1;
+	transform: scaleY(1);
+	transition: $transition-transform;
+	transform-origin: center bottom;
+}
+
+.zoom-in-bottom-enter,
+.zoom-in-bottom-leave-active {
+	opacity: 0;
+	transform: scaleY(0);
+}
+
+// Zoom in left transition
+.zoom-in-left-enter-active,
+.zoom-in-left-leave-active {
+	opacity: 1;
+	transform: scale(1, 1);
+	transition: $transition-transform;
+	transform-origin: top left;
+}
+
+.zoom-in-left-enter,
+.zoom-in-left-leave-active {
+	opacity: 0;
+	transform: scale(0.45, 0.45);
+}
+
+// Collapse transition
+.collapse-transition {
+	transition: 0.3s height ease-in-out, 0.3s padding-top ease-in-out,
+		0.3s padding-bottom ease-in-out;
+}
+
+// Horizontal collapse transition
+.horizontal-collapse-transition {
+	transition: 0.3s width ease-in-out, 0.3s padding-left ease-in-out,
+		0.3s padding-right ease-in-out;
+}
+
+// List transition
+.list-enter-active,
+.list-leave-active {
+	transition: $transition-transform;
+}
+
+.list-enter,
+.list-leave-active {
+	opacity: 0;
+	transform: translateY(-30px);
+}
+
+// Horizontal list transition
+.list-horizontal-enter-active,
+.list-horizontal-leave-active {
+	transition: $transition-transform;
+}
+
+.list-horizontal-enter,
+.list-horizontal-leave-active {
+	opacity: 0;
+	transform: translateX(30px);
+}
+
+// Opacity transition
+.opacity-transition {
+	transition: opacity 0.3s cubic-bezier(0.55, 0, 0.1, 1);
+}
