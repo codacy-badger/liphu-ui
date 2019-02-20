@@ -1,19 +1,26 @@
 <template>
-	<lp-layout class="my-8 border">
-		<lp-header class="p-5">
-			<div class="logo"></div>
-			<span>Header</span>
-		</lp-header>
-		<lp-layout direction="horizontal" t>
-			<lp-aside width="250" class="p-5">Aside</lp-aside>
-			<lp-layout>
-				<lp-content class="p-5">
-					<lp-container>Content</lp-container>
-				</lp-content>
-				<lp-footer class="p-5">Footer</lp-footer>
+	<lp-row>
+		<lp-col col="24">
+			<h1 class="mt-8">Layout Test</h1>
+		</lp-col>
+		<lp-col col="24">
+			<lp-layout class="my-8 border">
+				<lp-header class="p-5">
+					<div class="logo"></div>
+					<span>Header</span>
+				</lp-header>
+				<lp-layout direction="horizontal" t>
+					<lp-aside width="250" class="p-5">Aside</lp-aside>
+					<lp-layout>
+						<lp-content class="p-5">
+							<lp-container>Content</lp-container>
+						</lp-content>
+						<lp-footer class="p-5">Footer</lp-footer>
+					</lp-layout>
+				</lp-layout>
 			</lp-layout>
-		</lp-layout>
-	</lp-layout>
+		</lp-col>
+	</lp-row>
 </template>
 
 <script>

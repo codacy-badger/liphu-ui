@@ -1,0 +1,24 @@
+$card-spacer-y: 1rem !default;
+$card-spacer-x: 1.5rem !default;
+
+$card-border-width: $border-width !default;
+$card-border-radius: $border-radius !default;
+
+$card-bg: $white !default;
+$card-footer-bg: $gray-100 !default;
+$card-border-color: $border-color;
+
+$card-box-shadow: 2px 2px 0 rgba($black, 0.035) !default;
+$card-hover-box-shadow: 0 2px 1rem rgba($black, 0.1) !default;
+
+$card-title-font-size: $font-size-base !default;
+$card-title-font-weight: $font-weight-semibold !default;
+
+$card-subtitle-font-size: $font-size-base !default;
+$card-subtitle-font-weight: $font-weight-semibold !default;
+
+$card-meta-title-font-size: $font-size-lg !default;
+$card-meta-title-font-weight: $font-weight-semibold !default;
+
+$card-meta-description-font-size: $font-size-base !default;
+$card-meta-description-font-weight: $font-weight-base !default;

@@ -8,6 +8,10 @@ import { LpHeader as Header } from './components/layout';
 import { LpFooter as Footer } from './components/layout';
 import { LpContent as Content } from './components/layout';
 import { LpAside as Aside } from './components/layout';
+import { LpCard as Card } from './components/card';
+import { LpCardMeta as CardMeta } from './components/card';
+import { LpCardGroup as CardGroup } from './components/card';
+import { LpCardDeck as CardDeck } from './components/card';
 import Row from './components/row';
 import Column from './components/column';
 import Container from './components/container';
@@ -20,7 +24,11 @@ const components = [
 	Aside,
 	Row,
 	Column,
-	Container
+	Container,
+	Card,
+	CardMeta,
+	CardGroup,
+	CardDeck
 ];
 
 const installOptions = (options = {}) => {
@@ -52,7 +60,20 @@ if (typeof window !== 'undefined' && window.Vue) {
 	install(window.Vue);
 }
 
-export { Layout, Header, Footer, Content, Aside, Row, Column, Container };
+export {
+	Layout,
+	Header,
+	Footer,
+	Content,
+	Aside,
+	Row,
+	Column,
+	Container,
+	Card,
+	CardMeta,
+	CardGroup,
+	CardDeck
+};
 
 export default {
 	install,

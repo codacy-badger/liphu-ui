@@ -1,0 +1,182 @@
+.#{$css-prefix}-card {
+	display: block;
+	position: relative;
+	background-color: $card-bg;
+	border: $card-border-width solid $card-border-color;
+	border-radius: $card-border-radius;
+	box-shadow: $card-box-shadow;
+	transition: $transition-base;
+
+	&-hoverable {
+		@include hover-focus-active {
+			box-shadow: $card-hover-box-shadow;
+		}
+	}
+
+	&-header {
+		padding: 0 $card-spacer-x;
+		border-bottom: $card-border-width solid $border-color;
+
+		&-wrapper {
+			display: flex;
+			align-items: center;
+		}
+
+		&-extra {
+			float: right;
+			padding: $card-spacer-y 0;
+			text-align: right;
+			margin-left: auto;
+		}
+	}
+
+	&-title {
+		padding: $card-spacer-y 0;
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
+		flex: 1;
+		display: inline-block;
+		font-size: $card-title-font-size;
+		font-weight: $card-title-font-weight;
+	}
+
+	&-body {
+		padding: $card-spacer-x;
+		@include clearfix();
+
+		.#{$css-prefix}-card-header {
+			background-color: $body-bg;
+		}
+	}
+
+	&-meta {
+		margin: -($card-spacer-y / 4) 0;
+		zoom: 1;
+
+		&-avatar {
+			padding-right: ($card-spacer-y);
+			float: left;
+		}
+
+		&-detail {
+			overflow: hidden;
+		}
+
+		&-title {
+			font-size: $card-meta-title-font-size;
+			text-overflow: ellipsis;
+			overflow: hidden;
+			white-space: nowrap;
+			font-weight: $card-meta-title-font-weight;
+
+			&:not(:last-child) {
+				margin-bottom: ($card-spacer-y / 4);
+			}
+		}
+
+		&-description {
+			color: $disabled;
+		}
+	}
+
+	&-image {
+		margin: -$card-border-width;
+
+		& > * {
+			width: 100%;
+			display: block;
+		}
+
+		&-top > * {
+			border-top-left-radius: $card-border-radius;
+			border-top-right-radius: $card-border-radius;
+		}
+
+		&-bottom > * {
+			border-bottom-left-radius: $card-border-radius;
+			border-bottom-right-radius: $card-border-radius;
+		}
+	}
+
+	&-footer {
+		border-top: $card-border-width solid $card-border-color;
+		background-color: $card-footer-bg;
+		padding: $card-spacer-y $card-spacer-x;
+	}
+}
+
+.#{$css-prefix}-card-group {
+	display: flex;
+	flex-direction: column;
+
+	> .#{$css-prefix}-card {
+		margin-bottom: $card-spacer-y;
+	}
+
+	@include media-breakpoint-up(sm) {
+		flex-flow: row wrap;
+
+		> .#{$css-prefix}-card {
+			flex: 1 0 0%;
+			margin-bottom: 0;
+
+			&:first-child {
+				border-top-right-radius: 0;
+				border-bottom-right-radius: 0;
+			}
+
+			&:last-child {
+				border-top-left-radius: 0;
+				border-bottom-left-radius: 0;
+			}
+
+			:not(:last-child):not(:first-child):not(:only-child) {
+				border-radius: 0;
+			}
+		}
+
+		> .#{$css-prefix}-card + .#{$css-prefix}-card {
+			border-left: 0;
+		}
+	}
+}
+
+.#{$css-prefix}-card-deck {
+	display: flex;
+	flex-direction: column;
+
+	> .#{$css-prefix}-card {
+		margin-bottom: $card-spacer-y;
+
+		> .#{$css-prefix}-card-body {
+			flex: 1 1 auto;
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		flex-flow: row wrap;
+		margin-right: ($grid-gutter-width / -2);
+		margin-left: ($grid-gutter-width / -2);
+
+		> .#{$css-prefix}-card {
+			display: flex;
+			flex: 1 0 0%;
+			flex-direction: column;
+			margin-right: ($grid-gutter-width / 2);
+			margin-left: ($grid-gutter-width / 2);
+			margin-bottom: 0;
+		}
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.#{$css-prefix}-card.bg-#{$color} {
+		&,
+		.#{$css-prefix}-card-header,
+		.#{$css-prefix}-card-footer {
+			border-color: rgba($black, 0.1);
+			background: $value;
+		}
+	}
+}
