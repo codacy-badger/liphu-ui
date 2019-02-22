@@ -48,15 +48,11 @@
 
 <script>
 const defaultName = 'LpCard';
-
 export default {
 	name: 'LpCard',
 	defaultName: defaultName,
 	props: {
 		title: String,
-		subtitle: String,
-		grid: Boolean,
-		borderless: Boolean,
 		hoverable: Boolean
 	},
 	computed: {
