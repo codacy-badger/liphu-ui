@@ -1,7 +1,7 @@
 export default [
 	{
 		path: 'introduce',
-		name: 'introduce',
+		name: 'components-introduce',
 		component: () => import('site/pages/components/introduce.vue')
 	}
 ];

@@ -8,6 +8,7 @@
 import { isInteger, capitalizeFirstLetter } from 'utils/helpers';
 
 const defaultName = 'LpCol';
+
 export default {
 	name: 'LpCol',
 	defaultName: defaultName,

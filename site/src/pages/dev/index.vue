@@ -1,22 +1,20 @@
 <template>
 	<lp-layout>
-		<lp-container>
-			<lp-row>
-				<lp-col col="24">
-					<h1 class="mt-8">Layout Test</h1>
-					<layout-test />
-				</lp-col>
-			</lp-row>
+		<lp-container class="py-8">
+			<layout-test />
+			<card-test />
 		</lp-container>
 	</lp-layout>
 </template>
 
 <script>
-import layout from './layout/layout.vue';
+import layout from './layout/layout-test.vue';
+import card from './card/card-test.vue';
 
 export default {
 	components: {
-		'layout-test': layout
+		'layout-test': layout,
+		'card-test': card
 	}
 };
 </script>

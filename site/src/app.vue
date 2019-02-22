@@ -7,6 +7,7 @@
 <script>
 import defaultLayout from './layouts/default';
 import guidelinesLayout from './layouts/guidelines';
+
 export default {
 	components: { default: defaultLayout, guidelines: guidelinesLayout },
 	computed: {
