@@ -7,7 +7,7 @@ describe('Card', () => {
 		destroyVM(vm);
 	});
 
-	it('Card', () => {
+	it('Create', () => {
 		vm = createVue(
 			{
 				template: `<lp-card></lp-card>`

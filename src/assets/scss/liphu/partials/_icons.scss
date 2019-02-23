@@ -1,0 +1,1090 @@
+.#{$css-prefix}-icon {
+	display: inline-block;
+	font-family: $icon-font-family;
+	font-size: inherit;
+	font-style: normal;
+	font-weight: normal;
+	speak: none;
+	vertical-align: -0.125em;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-transform: none;
+}
+
+.#{$css-prefix}-icon-xxs {
+	font-size: $icon-size-xxs;
+}
+
+.#{$css-prefix}-icon-xs {
+	font-size: $icon-size-xs;
+}
+
+.#{$css-prefix}-icon-sm {
+	font-size: $icon-size-sm;
+}
+
+.#{$css-prefix}-icon-lg {
+	font-size: $icon-size-lg;
+}
+
+.#{$css-prefix}-icon-xl {
+	font-size: $icon-size-xl;
+}
+
+.#{$css-prefix}-icon-wand:before {
+	content: '\e600';
+}
+.#{$css-prefix}-icon-volume:before {
+	content: '\e601';
+}
+.#{$css-prefix}-icon-user:before {
+	content: '\e602';
+}
+.#{$css-prefix}-icon-unlock:before {
+	content: '\e603';
+}
+.#{$css-prefix}-icon-unlink:before {
+	content: '\e604';
+}
+.#{$css-prefix}-icon-trash:before {
+	content: '\e605';
+}
+.#{$css-prefix}-icon-thought:before {
+	content: '\e606';
+}
+.#{$css-prefix}-icon-target:before {
+	content: '\e607';
+}
+.#{$css-prefix}-icon-tag:before {
+	content: '\e608';
+}
+.#{$css-prefix}-icon-tablet:before {
+	content: '\e609';
+}
+.#{$css-prefix}-icon-star:before {
+	content: '\e60a';
+}
+.#{$css-prefix}-icon-spray:before {
+	content: '\e60b';
+}
+.#{$css-prefix}-icon-signal:before {
+	content: '\e60c';
+}
+.#{$css-prefix}-icon-shopping-cart:before {
+	content: '\e60d';
+}
+.#{$css-prefix}-icon-shopping-cart-full:before {
+	content: '\e60e';
+}
+.#{$css-prefix}-icon-settings:before {
+	content: '\e60f';
+}
+.#{$css-prefix}-icon-search:before {
+	content: '\e610';
+}
+.#{$css-prefix}-icon-zoom-in:before {
+	content: '\e611';
+}
+.#{$css-prefix}-icon-zoom-out:before {
+	content: '\e612';
+}
+.#{$css-prefix}-icon-cut:before {
+	content: '\e613';
+}
+.#{$css-prefix}-icon-ruler:before {
+	content: '\e614';
+}
+.#{$css-prefix}-icon-ruler-pencil:before {
+	content: '\e615';
+}
+.#{$css-prefix}-icon-ruler-alt:before {
+	content: '\e616';
+}
+.#{$css-prefix}-icon-bookmark:before {
+	content: '\e617';
+}
+.#{$css-prefix}-icon-bookmark-alt:before {
+	content: '\e618';
+}
+.#{$css-prefix}-icon-reload:before {
+	content: '\e619';
+}
+.#{$css-prefix}-icon-plus:before {
+	content: '\e61a';
+}
+.#{$css-prefix}-icon-pin:before {
+	content: '\e61b';
+}
+.#{$css-prefix}-icon-pencil:before {
+	content: '\e61c';
+}
+.#{$css-prefix}-icon-pencil-alt:before {
+	content: '\e61d';
+}
+.#{$css-prefix}-icon-paint-roller:before {
+	content: '\e61e';
+}
+.#{$css-prefix}-icon-paint-bucket:before {
+	content: '\e61f';
+}
+.#{$css-prefix}-icon-na:before {
+	content: '\e620';
+}
+.#{$css-prefix}-icon-mobile:before {
+	content: '\e621';
+}
+.#{$css-prefix}-icon-minus:before {
+	content: '\e622';
+}
+.#{$css-prefix}-icon-medall:before {
+	content: '\e623';
+}
+.#{$css-prefix}-icon-medall-alt:before {
+	content: '\e624';
+}
+.#{$css-prefix}-icon-marker:before {
+	content: '\e625';
+}
+.#{$css-prefix}-icon-marker-alt:before {
+	content: '\e626';
+}
+.#{$css-prefix}-icon-arrow-up:before {
+	content: '\e627';
+}
+.#{$css-prefix}-icon-arrow-right:before {
+	content: '\e628';
+}
+.#{$css-prefix}-icon-arrow-left:before {
+	content: '\e629';
+}
+.#{$css-prefix}-icon-arrow-down:before {
+	content: '\e62a';
+}
+.#{$css-prefix}-icon-lock:before {
+	content: '\e62b';
+}
+.#{$css-prefix}-icon-location-arrow:before {
+	content: '\e62c';
+}
+.#{$css-prefix}-icon-link:before {
+	content: '\e62d';
+}
+.#{$css-prefix}-icon-layout:before {
+	content: '\e62e';
+}
+.#{$css-prefix}-icon-layers:before {
+	content: '\e62f';
+}
+.#{$css-prefix}-icon-layers-alt:before {
+	content: '\e630';
+}
+.#{$css-prefix}-icon-key:before {
+	content: '\e631';
+}
+.#{$css-prefix}-icon-import:before {
+	content: '\e632';
+}
+.#{$css-prefix}-icon-image:before {
+	content: '\e633';
+}
+.#{$css-prefix}-icon-heart:before {
+	content: '\e634';
+}
+.#{$css-prefix}-icon-heart-broken:before {
+	content: '\e635';
+}
+.#{$css-prefix}-icon-hand-stop:before {
+	content: '\e636';
+}
+.#{$css-prefix}-icon-hand-open:before {
+	content: '\e637';
+}
+.#{$css-prefix}-icon-hand-drag:before {
+	content: '\e638';
+}
+.#{$css-prefix}-icon-folder:before {
+	content: '\e639';
+}
+.#{$css-prefix}-icon-flag:before {
+	content: '\e63a';
+}
+.#{$css-prefix}-icon-flag-alt:before {
+	content: '\e63b';
+}
+.#{$css-prefix}-icon-flag-alt-2:before {
+	content: '\e63c';
+}
+.#{$css-prefix}-icon-eye:before {
+	content: '\e63d';
+}
+.#{$css-prefix}-icon-export:before {
+	content: '\e63e';
+}
+.#{$css-prefix}-icon-exchange-vertical:before {
+	content: '\e63f';
+}
+.#{$css-prefix}-icon-desktop:before {
+	content: '\e640';
+}
+.#{$css-prefix}-icon-cup:before {
+	content: '\e641';
+}
+.#{$css-prefix}-icon-crown:before {
+	content: '\e642';
+}
+.#{$css-prefix}-icon-comments:before {
+	content: '\e643';
+}
+.#{$css-prefix}-icon-comment:before {
+	content: '\e644';
+}
+.#{$css-prefix}-icon-comment-alt:before {
+	content: '\e645';
+}
+.#{$css-prefix}-icon-close:before {
+	content: '\e646';
+}
+.#{$css-prefix}-icon-clip:before {
+	content: '\e647';
+}
+.#{$css-prefix}-icon-angle-up:before {
+	content: '\e648';
+}
+.#{$css-prefix}-icon-angle-right:before {
+	content: '\e649';
+}
+.#{$css-prefix}-icon-angle-left:before {
+	content: '\e64a';
+}
+.#{$css-prefix}-icon-angle-down:before {
+	content: '\e64b';
+}
+.#{$css-prefix}-icon-check:before {
+	content: '\e64c';
+}
+.#{$css-prefix}-icon-check-box:before {
+	content: '\e64d';
+}
+.#{$css-prefix}-icon-camera:before {
+	content: '\e64e';
+}
+.#{$css-prefix}-icon-announcement:before {
+	content: '\e64f';
+}
+.#{$css-prefix}-icon-brush:before {
+	content: '\e650';
+}
+.#{$css-prefix}-icon-briefcase:before {
+	content: '\e651';
+}
+.#{$css-prefix}-icon-bolt:before {
+	content: '\e652';
+}
+.#{$css-prefix}-icon-bolt-alt:before {
+	content: '\e653';
+}
+.#{$css-prefix}-icon-blackboard:before {
+	content: '\e654';
+}
+.#{$css-prefix}-icon-bag:before {
+	content: '\e655';
+}
+.#{$css-prefix}-icon-move:before {
+	content: '\e656';
+}
+.#{$css-prefix}-icon-arrows-vertical:before {
+	content: '\e657';
+}
+.#{$css-prefix}-icon-arrows-horizontal:before {
+	content: '\e658';
+}
+.#{$css-prefix}-icon-fullscreen:before {
+	content: '\e659';
+}
+.#{$css-prefix}-icon-arrow-top-right:before {
+	content: '\e65a';
+}
+.#{$css-prefix}-icon-arrow-top-left:before {
+	content: '\e65b';
+}
+.#{$css-prefix}-icon-arrow-circle-up:before {
+	content: '\e65c';
+}
+.#{$css-prefix}-icon-arrow-circle-right:before {
+	content: '\e65d';
+}
+.#{$css-prefix}-icon-arrow-circle-left:before {
+	content: '\e65e';
+}
+.#{$css-prefix}-icon-arrow-circle-down:before {
+	content: '\e65f';
+}
+.#{$css-prefix}-icon-angle-double-up:before {
+	content: '\e660';
+}
+.#{$css-prefix}-icon-angle-double-right:before {
+	content: '\e661';
+}
+.#{$css-prefix}-icon-angle-double-left:before {
+	content: '\e662';
+}
+.#{$css-prefix}-icon-angle-double-down:before {
+	content: '\e663';
+}
+.#{$css-prefix}-icon-zip:before {
+	content: '\e664';
+}
+.#{$css-prefix}-icon-world:before {
+	content: '\e665';
+}
+.#{$css-prefix}-icon-wheelchair:before {
+	content: '\e666';
+}
+.#{$css-prefix}-icon-view-list:before {
+	content: '\e667';
+}
+.#{$css-prefix}-icon-view-list-alt:before {
+	content: '\e668';
+}
+.#{$css-prefix}-icon-view-grid:before {
+	content: '\e669';
+}
+.#{$css-prefix}-icon-uppercase:before {
+	content: '\e66a';
+}
+.#{$css-prefix}-icon-upload:before {
+	content: '\e66b';
+}
+.#{$css-prefix}-icon-underline:before {
+	content: '\e66c';
+}
+.#{$css-prefix}-icon-truck:before {
+	content: '\e66d';
+}
+.#{$css-prefix}-icon-timer:before {
+	content: '\e66e';
+}
+.#{$css-prefix}-icon-ticket:before {
+	content: '\e66f';
+}
+.#{$css-prefix}-icon-thumb-up:before {
+	content: '\e670';
+}
+.#{$css-prefix}-icon-thumb-down:before {
+	content: '\e671';
+}
+.#{$css-prefix}-icon-text:before {
+	content: '\e672';
+}
+.#{$css-prefix}-icon-stats-up:before {
+	content: '\e673';
+}
+.#{$css-prefix}-icon-stats-down:before {
+	content: '\e674';
+}
+.#{$css-prefix}-icon-split-v:before {
+	content: '\e675';
+}
+.#{$css-prefix}-icon-split-h:before {
+	content: '\e676';
+}
+.#{$css-prefix}-icon-smallcap:before {
+	content: '\e677';
+}
+.#{$css-prefix}-icon-shine:before {
+	content: '\e678';
+}
+.#{$css-prefix}-icon-shift-right:before {
+	content: '\e679';
+}
+.#{$css-prefix}-icon-shift-left:before {
+	content: '\e67a';
+}
+.#{$css-prefix}-icon-shield:before {
+	content: '\e67b';
+}
+.#{$css-prefix}-icon-notepad:before {
+	content: '\e67c';
+}
+.#{$css-prefix}-icon-server:before {
+	content: '\e67d';
+}
+.#{$css-prefix}-icon-quote-right:before {
+	content: '\e67e';
+}
+.#{$css-prefix}-icon-quote-left:before {
+	content: '\e67f';
+}
+.#{$css-prefix}-icon-pulse:before {
+	content: '\e680';
+}
+.#{$css-prefix}-icon-printer:before {
+	content: '\e681';
+}
+.#{$css-prefix}-icon-power-off:before {
+	content: '\e682';
+}
+.#{$css-prefix}-icon-plug:before {
+	content: '\e683';
+}
+.#{$css-prefix}-icon-pie-chart:before {
+	content: '\e684';
+}
+.#{$css-prefix}-icon-paragraph:before {
+	content: '\e685';
+}
+.#{$css-prefix}-icon-panel:before {
+	content: '\e686';
+}
+.#{$css-prefix}-icon-package:before {
+	content: '\e687';
+}
+.#{$css-prefix}-icon-music:before {
+	content: '\e688';
+}
+.#{$css-prefix}-icon-music-alt:before {
+	content: '\e689';
+}
+.#{$css-prefix}-icon-mouse:before {
+	content: '\e68a';
+}
+.#{$css-prefix}-icon-mouse-alt:before {
+	content: '\e68b';
+}
+.#{$css-prefix}-icon-money:before {
+	content: '\e68c';
+}
+.#{$css-prefix}-icon-microphone:before {
+	content: '\e68d';
+}
+.#{$css-prefix}-icon-menu:before {
+	content: '\e68e';
+}
+.#{$css-prefix}-icon-menu-alt:before {
+	content: '\e68f';
+}
+.#{$css-prefix}-icon-map:before {
+	content: '\e690';
+}
+.#{$css-prefix}-icon-map-alt:before {
+	content: '\e691';
+}
+.#{$css-prefix}-icon-loop:before {
+	content: '\e692';
+}
+.#{$css-prefix}-icon-location-pin:before {
+	content: '\e693';
+}
+.#{$css-prefix}-icon-list:before {
+	content: '\e694';
+}
+.#{$css-prefix}-icon-light-bulb:before {
+	content: '\e695';
+}
+.#{$css-prefix}-icon-Italic:before {
+	content: '\e696';
+}
+.#{$css-prefix}-icon-info:before {
+	content: '\e697';
+}
+.#{$css-prefix}-icon-infinite:before {
+	content: '\e698';
+}
+.#{$css-prefix}-icon-id-badge:before {
+	content: '\e699';
+}
+.#{$css-prefix}-icon-hummer:before {
+	content: '\e69a';
+}
+.#{$css-prefix}-icon-home:before {
+	content: '\e69b';
+}
+.#{$css-prefix}-icon-help:before {
+	content: '\e69c';
+}
+.#{$css-prefix}-icon-headphone:before {
+	content: '\e69d';
+}
+.#{$css-prefix}-icon-harddrives:before {
+	content: '\e69e';
+}
+.#{$css-prefix}-icon-harddrive:before {
+	content: '\e69f';
+}
+.#{$css-prefix}-icon-gift:before {
+	content: '\e6a0';
+}
+.#{$css-prefix}-icon-game:before {
+	content: '\e6a1';
+}
+.#{$css-prefix}-icon-filter:before {
+	content: '\e6a2';
+}
+.#{$css-prefix}-icon-files:before {
+	content: '\e6a3';
+}
+.#{$css-prefix}-icon-file:before {
+	content: '\e6a4';
+}
+.#{$css-prefix}-icon-eraser:before {
+	content: '\e6a5';
+}
+.#{$css-prefix}-icon-envelope:before {
+	content: '\e6a6';
+}
+.#{$css-prefix}-icon-download:before {
+	content: '\e6a7';
+}
+.#{$css-prefix}-icon-direction:before {
+	content: '\e6a8';
+}
+.#{$css-prefix}-icon-direction-alt:before {
+	content: '\e6a9';
+}
+.#{$css-prefix}-icon-dashboard:before {
+	content: '\e6aa';
+}
+.#{$css-prefix}-icon-control-stop:before {
+	content: '\e6ab';
+}
+.#{$css-prefix}-icon-control-shuffle:before {
+	content: '\e6ac';
+}
+.#{$css-prefix}-icon-control-play:before {
+	content: '\e6ad';
+}
+.#{$css-prefix}-icon-control-pause:before {
+	content: '\e6ae';
+}
+.#{$css-prefix}-icon-control-forward:before {
+	content: '\e6af';
+}
+.#{$css-prefix}-icon-control-backward:before {
+	content: '\e6b0';
+}
+.#{$css-prefix}-icon-cloud:before {
+	content: '\e6b1';
+}
+.#{$css-prefix}-icon-cloud-up:before {
+	content: '\e6b2';
+}
+.#{$css-prefix}-icon-cloud-down:before {
+	content: '\e6b3';
+}
+.#{$css-prefix}-icon-clipboard:before {
+	content: '\e6b4';
+}
+.#{$css-prefix}-icon-car:before {
+	content: '\e6b5';
+}
+.#{$css-prefix}-icon-calendar:before {
+	content: '\e6b6';
+}
+.#{$css-prefix}-icon-book:before {
+	content: '\e6b7';
+}
+.#{$css-prefix}-icon-bell:before {
+	content: '\e6b8';
+}
+.#{$css-prefix}-icon-basketball:before {
+	content: '\e6b9';
+}
+.#{$css-prefix}-icon-bar-chart:before {
+	content: '\e6ba';
+}
+.#{$css-prefix}-icon-bar-chart-alt:before {
+	content: '\e6bb';
+}
+.#{$css-prefix}-icon-back-right:before {
+	content: '\e6bc';
+}
+.#{$css-prefix}-icon-back-left:before {
+	content: '\e6bd';
+}
+.#{$css-prefix}-icon-arrows-corner:before {
+	content: '\e6be';
+}
+.#{$css-prefix}-icon-archive:before {
+	content: '\e6bf';
+}
+.#{$css-prefix}-icon-anchor:before {
+	content: '\e6c0';
+}
+.#{$css-prefix}-icon-align-right:before {
+	content: '\e6c1';
+}
+.#{$css-prefix}-icon-align-left:before {
+	content: '\e6c2';
+}
+.#{$css-prefix}-icon-align-justify:before {
+	content: '\e6c3';
+}
+.#{$css-prefix}-icon-align-center:before {
+	content: '\e6c4';
+}
+.#{$css-prefix}-icon-alert:before {
+	content: '\e6c5';
+}
+.#{$css-prefix}-icon-alarm-clock:before {
+	content: '\e6c6';
+}
+.#{$css-prefix}-icon-agenda:before {
+	content: '\e6c7';
+}
+.#{$css-prefix}-icon-write:before {
+	content: '\e6c8';
+}
+.#{$css-prefix}-icon-window:before {
+	content: '\e6c9';
+}
+.#{$css-prefix}-icon-widgetized:before {
+	content: '\e6ca';
+}
+.#{$css-prefix}-icon-widget:before {
+	content: '\e6cb';
+}
+.#{$css-prefix}-icon-widget-alt:before {
+	content: '\e6cc';
+}
+.#{$css-prefix}-icon-wallet:before {
+	content: '\e6cd';
+}
+.#{$css-prefix}-icon-video-clapper:before {
+	content: '\e6ce';
+}
+.#{$css-prefix}-icon-video-camera:before {
+	content: '\e6cf';
+}
+.#{$css-prefix}-icon-vector:before {
+	content: '\e6d0';
+}
+.#{$css-prefix}-icon-themify-logo:before {
+	content: '\e6d1';
+}
+.#{$css-prefix}-icon-themify-favicon:before {
+	content: '\e6d2';
+}
+.#{$css-prefix}-icon-themify-favicon-alt:before {
+	content: '\e6d3';
+}
+.#{$css-prefix}-icon-support:before {
+	content: '\e6d4';
+}
+.#{$css-prefix}-icon-stamp:before {
+	content: '\e6d5';
+}
+.#{$css-prefix}-icon-split-v-alt:before {
+	content: '\e6d6';
+}
+.#{$css-prefix}-icon-slice:before {
+	content: '\e6d7';
+}
+.#{$css-prefix}-icon-shortcode:before {
+	content: '\e6d8';
+}
+.#{$css-prefix}-icon-shift-right-alt:before {
+	content: '\e6d9';
+}
+.#{$css-prefix}-icon-shift-left-alt:before {
+	content: '\e6da';
+}
+.#{$css-prefix}-icon-ruler-alt-2:before {
+	content: '\e6db';
+}
+.#{$css-prefix}-icon-receipt:before {
+	content: '\e6dc';
+}
+.#{$css-prefix}-icon-pin2:before {
+	content: '\e6dd';
+}
+.#{$css-prefix}-icon-pin-alt:before {
+	content: '\e6de';
+}
+.#{$css-prefix}-icon-pencil-alt2:before {
+	content: '\e6df';
+}
+.#{$css-prefix}-icon-palette:before {
+	content: '\e6e0';
+}
+.#{$css-prefix}-icon-more:before {
+	content: '\e6e1';
+}
+.#{$css-prefix}-icon-more-alt:before {
+	content: '\e6e2';
+}
+.#{$css-prefix}-icon-microphone-alt:before {
+	content: '\e6e3';
+}
+.#{$css-prefix}-icon-magnet:before {
+	content: '\e6e4';
+}
+.#{$css-prefix}-icon-line-double:before {
+	content: '\e6e5';
+}
+.#{$css-prefix}-icon-line-dotted:before {
+	content: '\e6e6';
+}
+.#{$css-prefix}-icon-line-dashed:before {
+	content: '\e6e7';
+}
+.#{$css-prefix}-icon-layout-width-full:before {
+	content: '\e6e8';
+}
+.#{$css-prefix}-icon-layout-width-default:before {
+	content: '\e6e9';
+}
+.#{$css-prefix}-icon-layout-width-default-alt:before {
+	content: '\e6ea';
+}
+.#{$css-prefix}-icon-layout-tab:before {
+	content: '\e6eb';
+}
+.#{$css-prefix}-icon-layout-tab-window:before {
+	content: '\e6ec';
+}
+.#{$css-prefix}-icon-layout-tab-v:before {
+	content: '\e6ed';
+}
+.#{$css-prefix}-icon-layout-tab-min:before {
+	content: '\e6ee';
+}
+.#{$css-prefix}-icon-layout-slider:before {
+	content: '\e6ef';
+}
+.#{$css-prefix}-icon-layout-slider-alt:before {
+	content: '\e6f0';
+}
+.#{$css-prefix}-icon-layout-sidebar-right:before {
+	content: '\e6f1';
+}
+.#{$css-prefix}-icon-layout-sidebar-none:before {
+	content: '\e6f2';
+}
+.#{$css-prefix}-icon-layout-sidebar-left:before {
+	content: '\e6f3';
+}
+.#{$css-prefix}-icon-layout-placeholder:before {
+	content: '\e6f4';
+}
+.#{$css-prefix}-icon-layout-menu:before {
+	content: '\e6f5';
+}
+.#{$css-prefix}-icon-layout-menu-v:before {
+	content: '\e6f6';
+}
+.#{$css-prefix}-icon-layout-menu-separated:before {
+	content: '\e6f7';
+}
+.#{$css-prefix}-icon-layout-menu-full:before {
+	content: '\e6f8';
+}
+.#{$css-prefix}-icon-layout-media-right-alt:before {
+	content: '\e6f9';
+}
+.#{$css-prefix}-icon-layout-media-right:before {
+	content: '\e6fa';
+}
+.#{$css-prefix}-icon-layout-media-overlay:before {
+	content: '\e6fb';
+}
+.#{$css-prefix}-icon-layout-media-overlay-alt:before {
+	content: '\e6fc';
+}
+.#{$css-prefix}-icon-layout-media-overlay-alt-2:before {
+	content: '\e6fd';
+}
+.#{$css-prefix}-icon-layout-media-left-alt:before {
+	content: '\e6fe';
+}
+.#{$css-prefix}-icon-layout-media-left:before {
+	content: '\e6ff';
+}
+.#{$css-prefix}-icon-layout-media-center-alt:before {
+	content: '\e700';
+}
+.#{$css-prefix}-icon-layout-media-center:before {
+	content: '\e701';
+}
+.#{$css-prefix}-icon-layout-list-thumb:before {
+	content: '\e702';
+}
+.#{$css-prefix}-icon-layout-list-thumb-alt:before {
+	content: '\e703';
+}
+.#{$css-prefix}-icon-layout-list-post:before {
+	content: '\e704';
+}
+.#{$css-prefix}-icon-layout-list-large-image:before {
+	content: '\e705';
+}
+.#{$css-prefix}-icon-layout-line-solid:before {
+	content: '\e706';
+}
+.#{$css-prefix}-icon-layout-grid4:before {
+	content: '\e707';
+}
+.#{$css-prefix}-icon-layout-grid3:before {
+	content: '\e708';
+}
+.#{$css-prefix}-icon-layout-grid2:before {
+	content: '\e709';
+}
+.#{$css-prefix}-icon-layout-grid2-thumb:before {
+	content: '\e70a';
+}
+.#{$css-prefix}-icon-layout-cta-right:before {
+	content: '\e70b';
+}
+.#{$css-prefix}-icon-layout-cta-left:before {
+	content: '\e70c';
+}
+.#{$css-prefix}-icon-layout-cta-center:before {
+	content: '\e70d';
+}
+.#{$css-prefix}-icon-layout-cta-btn-right:before {
+	content: '\e70e';
+}
+.#{$css-prefix}-icon-layout-cta-btn-left:before {
+	content: '\e70f';
+}
+.#{$css-prefix}-icon-layout-column4:before {
+	content: '\e710';
+}
+.#{$css-prefix}-icon-layout-column3:before {
+	content: '\e711';
+}
+.#{$css-prefix}-icon-layout-column2:before {
+	content: '\e712';
+}
+.#{$css-prefix}-icon-layout-accordion-separated:before {
+	content: '\e713';
+}
+.#{$css-prefix}-icon-layout-accordion-merged:before {
+	content: '\e714';
+}
+.#{$css-prefix}-icon-layout-accordion-list:before {
+	content: '\e715';
+}
+.#{$css-prefix}-icon-ink-pen:before {
+	content: '\e716';
+}
+.#{$css-prefix}-icon-info-alt:before {
+	content: '\e717';
+}
+.#{$css-prefix}-icon-help-alt:before {
+	content: '\e718';
+}
+.#{$css-prefix}-icon-headphone-alt:before {
+	content: '\e719';
+}
+.#{$css-prefix}-icon-hand-point-up:before {
+	content: '\e71a';
+}
+.#{$css-prefix}-icon-hand-point-right:before {
+	content: '\e71b';
+}
+.#{$css-prefix}-icon-hand-point-left:before {
+	content: '\e71c';
+}
+.#{$css-prefix}-icon-hand-point-down:before {
+	content: '\e71d';
+}
+.#{$css-prefix}-icon-gallery:before {
+	content: '\e71e';
+}
+.#{$css-prefix}-icon-face-smile:before {
+	content: '\e71f';
+}
+.#{$css-prefix}-icon-face-sad:before {
+	content: '\e720';
+}
+.#{$css-prefix}-icon-credit-card:before {
+	content: '\e721';
+}
+.#{$css-prefix}-icon-control-skip-forward:before {
+	content: '\e722';
+}
+.#{$css-prefix}-icon-control-skip-backward:before {
+	content: '\e723';
+}
+.#{$css-prefix}-icon-control-record:before {
+	content: '\e724';
+}
+.#{$css-prefix}-icon-control-eject:before {
+	content: '\e725';
+}
+.#{$css-prefix}-icon-comments-smiley:before {
+	content: '\e726';
+}
+.#{$css-prefix}-icon-brush-alt:before {
+	content: '\e727';
+}
+.#{$css-prefix}-icon-youtube:before {
+	content: '\e728';
+}
+.#{$css-prefix}-icon-vimeo:before {
+	content: '\e729';
+}
+.#{$css-prefix}-icon-twitter:before {
+	content: '\e72a';
+}
+.#{$css-prefix}-icon-time:before {
+	content: '\e72b';
+}
+.#{$css-prefix}-icon-tumblr:before {
+	content: '\e72c';
+}
+.#{$css-prefix}-icon-skype:before {
+	content: '\e72d';
+}
+.#{$css-prefix}-icon-share:before {
+	content: '\e72e';
+}
+.#{$css-prefix}-icon-share-alt:before {
+	content: '\e72f';
+}
+.#{$css-prefix}-icon-rocket:before {
+	content: '\e730';
+}
+.#{$css-prefix}-icon-pinterest:before {
+	content: '\e731';
+}
+.#{$css-prefix}-icon-new-window:before {
+	content: '\e732';
+}
+.#{$css-prefix}-icon-microsoft:before {
+	content: '\e733';
+}
+.#{$css-prefix}-icon-list-ol:before {
+	content: '\e734';
+}
+.#{$css-prefix}-icon-linkedin:before {
+	content: '\e735';
+}
+.#{$css-prefix}-icon-layout-sidebar-2:before {
+	content: '\e736';
+}
+.#{$css-prefix}-icon-layout-grid4-alt:before {
+	content: '\e737';
+}
+.#{$css-prefix}-icon-layout-grid3-alt:before {
+	content: '\e738';
+}
+.#{$css-prefix}-icon-layout-grid2-alt:before {
+	content: '\e739';
+}
+.#{$css-prefix}-icon-layout-column4-alt:before {
+	content: '\e73a';
+}
+.#{$css-prefix}-icon-layout-column3-alt:before {
+	content: '\e73b';
+}
+.#{$css-prefix}-icon-layout-column2-alt:before {
+	content: '\e73c';
+}
+.#{$css-prefix}-icon-instagram:before {
+	content: '\e73d';
+}
+.#{$css-prefix}-icon-google:before {
+	content: '\e73e';
+}
+.#{$css-prefix}-icon-github:before {
+	content: '\e73f';
+}
+.#{$css-prefix}-icon-flickr:before {
+	content: '\e740';
+}
+.#{$css-prefix}-icon-facebook:before {
+	content: '\e741';
+}
+.#{$css-prefix}-icon-dropbox:before {
+	content: '\e742';
+}
+.#{$css-prefix}-icon-dribbble:before {
+	content: '\e743';
+}
+.#{$css-prefix}-icon-apple:before {
+	content: '\e744';
+}
+.#{$css-prefix}-icon-android:before {
+	content: '\e745';
+}
+.#{$css-prefix}-icon-save:before {
+	content: '\e746';
+}
+.#{$css-prefix}-icon-save-alt:before {
+	content: '\e747';
+}
+.#{$css-prefix}-icon-yahoo:before {
+	content: '\e748';
+}
+.#{$css-prefix}-icon-wordpress:before {
+	content: '\e749';
+}
+.#{$css-prefix}-icon-vimeo-alt:before {
+	content: '\e74a';
+}
+.#{$css-prefix}-icon-twitter-alt:before {
+	content: '\e74b';
+}
+.#{$css-prefix}-icon-tumblr-alt:before {
+	content: '\e74c';
+}
+.#{$css-prefix}-icon-trello:before {
+	content: '\e74d';
+}
+.#{$css-prefix}-icon-stack-overflow:before {
+	content: '\e74e';
+}
+.#{$css-prefix}-icon-soundcloud:before {
+	content: '\e74f';
+}
+.#{$css-prefix}-icon-sharethis:before {
+	content: '\e750';
+}
+.#{$css-prefix}-icon-sharethis-alt:before {
+	content: '\e751';
+}
+.#{$css-prefix}-icon-reddit:before {
+	content: '\e752';
+}
+.#{$css-prefix}-icon-pinterest-alt:before {
+	content: '\e753';
+}
+.#{$css-prefix}-icon-microsoft-alt:before {
+	content: '\e754';
+}
+.#{$css-prefix}-icon-linux:before {
+	content: '\e755';
+}
+.#{$css-prefix}-icon-jsfiddle:before {
+	content: '\e756';
+}
+.#{$css-prefix}-icon-joomla:before {
+	content: '\e757';
+}
+.#{$css-prefix}-icon-html5:before {
+	content: '\e758';
+}
+.#{$css-prefix}-icon-flickr-alt:before {
+	content: '\e759';
+}
+.#{$css-prefix}-icon-email:before {
+	content: '\e75a';
+}
+.#{$css-prefix}-icon-drupal:before {
+	content: '\e75b';
+}
+.#{$css-prefix}-icon-dropbox-alt:before {
+	content: '\e75c';
+}
+.#{$css-prefix}-icon-css3:before {
+	content: '\e75d';
+}
+.#{$css-prefix}-icon-rss:before {
+	content: '\e75e';
+}
+.#{$css-prefix}-icon-rss-alt:before {
+	content: '\e75f';
+}

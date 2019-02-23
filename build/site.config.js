@@ -1,7 +1,6 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 
 const barConfig = {
 	name: 'Site',
@@ -108,22 +107,19 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 					},
 					MiniCssExtractPlugin.loader,
 					{
-						loader: 'css-loader?url=true'
-					},
-					{
-						loader: 'resolve-url-loader',
-						options: {}
+						loader: 'css-loader'
 					},
 					{
 						loader: 'postcss-loader'
 					},
 					{
-						loader: 'sass-loader?url=true',
+						loader: 'sass-loader',
 						options: {
 							sourceMap: true,
 							sourceMapContents: false,
 							includePaths: [
 								path.resolve(__dirname, '../src/assets/scss'),
+								path.resolve(__dirname, '../src/assets'),
 								path.resolve(__dirname, '../site/src/assets')
 							],
 							data: `
@@ -148,6 +144,20 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 			// 		name: path.posix.join('assets', '[name].[hash:7].[ext]')
 			// 	}
 			// },
+			{
+				test: /\.(otf|ttf|woff2?|eot)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							emitFile: true,
+							name: isProd
+								? 'fonts/[name].[ext]'
+								: 'fonts/[name].[hash:7].[ext]'
+						}
+					}
+				]
+			},
 			{
 				test: /\.(png|jpe?g|svg|gif)$/,
 				use: [
@@ -179,11 +189,5 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 			root: path.resolve(__dirname, '../'),
 			verbose: false
 		})
-		// new CopyPlugin([
-		// 	{
-		// 		from: path.resolve(__dirname, '../site/src/assets/images'),
-		// 		to: 'images'
-		// 	}
-		// ])
 	]
 });

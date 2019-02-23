@@ -37,7 +37,7 @@ module.exports = (config, path, WebpackBar) => ({
 				use: [
 					MiniCssExtractPlugin.loader,
 					{
-						loader: 'css-loader?-url'
+						loader: 'css-loader'
 					},
 					{
 						loader: 'postcss-loader'
@@ -45,6 +45,11 @@ module.exports = (config, path, WebpackBar) => ({
 					{
 						loader: 'sass-loader',
 						options: {
+							includePaths: [
+								path.resolve(__dirname, '../src/assets/scss'),
+								path.resolve(__dirname, '../src/assets'),
+								path.resolve(__dirname, '../site/src/assets')
+							],
 							data: `
 								@import '${path.resolve(
 									__dirname,
@@ -61,12 +66,28 @@ module.exports = (config, path, WebpackBar) => ({
 				]
 			},
 			{
-				test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-				loader: 'url-loader',
-				query: {
-					limit: 10000,
-					name: path.posix.join('static', '[name].[hash:7].[ext]')
-				}
+				test: /\.(otf|ttf|woff2?|eot)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							emitFile: true,
+							name: 'fonts/[name].[ext]'
+						}
+					}
+				]
+			},
+			{
+				test: /\.(png|jpe?g|svg|gif)$/,
+				use: [
+					{
+						loader: 'file-loader',
+						options: {
+							emitFile: true,
+							name: 'images/[name].[ext]'
+						}
+					}
+				]
 			}
 		]
 	},

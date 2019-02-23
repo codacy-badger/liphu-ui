@@ -63,6 +63,7 @@ exports.styles = styles;
 
 exports.alias = {
 	'liphu-ui': path.resolve(__dirname, '../src'),
+	assets: path.resolve(__dirname, '../src/assets'),
 	styles: path.resolve(__dirname, '../src/assets/scss'),
 	utils: path.resolve(__dirname, '../src/utils'),
 	mixins: path.resolve(__dirname, '../src/mixins'),
