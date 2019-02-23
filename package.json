@@ -18,12 +18,7 @@
 	],
 	"license": "MIT",
 	"main": "./dist/liphu-ui.common.js",
-	"files": [
-		"dist/*",
-		"src/*",
-		"./*.json",
-		"./*.js"
-	],
+	"files": ["dist/*", "src/*", "./*.json", "./*.js"],
 	"homepage": "https://github.com/LiphuCL/liphu-ui",
 	"bugs": {
 		"url": "https://github.com/LiphuCL/liphu-ui/issues"
@@ -48,7 +43,8 @@
 		"test:watch": "NODE_ENV=production mocha-webpack -w --webpack-config ./build/webpack.config.test.js --require ./test/setup.js ./test/specs/**/*.spec.js",
 		"stylelint-check": "stylelint-config-prettier-check",
 		"eslint-check": "eslint --print-config .eslint.js | eslint-config-prettier-check",
-		"version": "auto-changelog -p && git add CHANGELOG.md"
+		"version": "auto-changelog -p && git add CHANGELOG.md",
+		"heroku-postbuild": "echo Skip build on Heroku"
 	},
 	"husky": {
 		"hooks": {
@@ -131,5 +127,6 @@
 		"webpack-dev-server": "^3.1.14",
 		"webpack-node-externals": "^1.7.2",
 		"webpackbar": "^3.1.5"
-	}
+	},
+	"heroku-run-build-script": true
 }

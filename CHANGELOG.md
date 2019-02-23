@@ -3,7 +3,7 @@
 <p align="center">
 <a href="https://travis-ci.com/LiphuCL/liphu-ui"><img src="https://img.shields.io/travis/com/LiphuCL/liphu-ui/master.svg?&style=flat&colorB=16CD97" alt="build status" height="20"></a>
 <a href="https://github.com/LiphuCL/liphu-ui/issues"><img src="https://img.shields.io/github/issues/LiphuCL/liphu-ui.svg?&style=flat&colorB=fabe46" alt="issues open" height="20"></a>
-<img src="https://img.shields.io/badge/commits%20to%20be%20deployed-7-3b79db.svg" alt="commits to be deployed">
+<img src="https://img.shields.io/badge/commits%20to%20be%20deployed-8-3b79db.svg" alt="commits to be deployed">
 <a href="https://www.npmjs.com/package/@liphu/liphu-ui"><img src="https://img.shields.io/npm/v/@liphu/liphu-ui.svg?colorB=3b79db" alt="npm version" height="20"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-3f51b5.svg" alt="license" height="20"></a>
 </p>
@@ -24,6 +24,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - :star2: Added: emitter mixin [`b8fe743`](https://github.com/LiphuCL/liphu-ui/commit/b8fe74390d4c36f13132391526c268540c461ee2)
 - :star2: Added: card-tests [`1e75ef6`](https://github.com/LiphuCL/liphu-ui/commit/1e75ef67be7e199a4bace73ea8796c7302de499e)
 - :star2: Added: card component [`42fadeb`](https://github.com/LiphuCL/liphu-ui/commit/42fadebd354385d20afc698f8f3ad48b920901aa)
+
+### Removed
+
+- :hocho: Removed: cross-env [`945e4f3`](https://github.com/LiphuCL/liphu-ui/commit/945e4f365094db3a89a7af4668f026b17db8bedf)
 
 ---
 <sub><sup>*This is an auto generated changelog. If you have any problems or suggestions, create an issue.* :blush: **Thanks** </sub></sup>
