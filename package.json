@@ -43,8 +43,7 @@
 		"test:watch": "NODE_ENV=production mocha-webpack -w --webpack-config ./build/webpack.config.test.js --require ./test/setup.js ./test/specs/**/*.spec.js",
 		"stylelint-check": "stylelint-config-prettier-check",
 		"eslint-check": "eslint --print-config .eslint.js | eslint-config-prettier-check",
-		"version": "auto-changelog -p && git add CHANGELOG.md",
-		"heroku-postbuild": "echo Skip build on Heroku"
+		"version": "auto-changelog -p && git add CHANGELOG.md"
 	},
 	"husky": {
 		"hooks": {
