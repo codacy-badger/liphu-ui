@@ -14,7 +14,7 @@ export default {
 	defaultName: defaultName,
 	props: {
 		width: {
-			type: Number,
+			type: [String, Number],
 			default: 200
 		}
 	},

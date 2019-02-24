@@ -71,6 +71,10 @@ exports.alias = {
 	vue:
 		process.env.NODE_ENV === 'production'
 			? 'vue/dist/vue.min'
+			: 'vue/dist/vue',
+	vue$:
+		process.env.NODE_ENV === 'production'
+			? 'vue/dist/vue.min'
 			: 'vue/dist/vue'
 };
 

@@ -10,7 +10,7 @@ describe('Column', () => {
 	it('Create', () => {
 		vm = createVue(
 			{
-				template: '<lp-col col="12"></lp-col>'
+				template: `<lp-col col="12" />`
 			},
 			true
 		);
@@ -24,7 +24,7 @@ describe('Column', () => {
 	it('Offset', () => {
 		vm = createVue(
 			{
-				template: '<lp-col col="12" offset="3"></lp-col>'
+				template: `<lp-col col="12" offset="3" />`
 			},
 			true
 		);

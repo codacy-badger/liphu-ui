@@ -6,10 +6,12 @@ $font-family-monospace: 'Inconsolata', sfmono-regular, menlo, monaco, consolas,
 $font-family-base: $font-family-sans-serif !default;
 
 $font-size-base: 1rem !default;
+$font-size-xxs: ($font-size-base * 0.6);
 $font-size-xs: ($font-size-base * 0.75) !default;
 $font-size-sm: ($font-size-base * 0.875) !default;
 $font-size-lg: ($font-size-base * 1.25) !default;
 $font-size-xl: ($font-size-base * 1.5) !default;
+$font-size-xxl: ($font-size-base * 2) !default;
 
 $font-weight-lighter: 200 !default;
 $font-weight-light: 300 !default;

@@ -10,7 +10,7 @@ describe('Card', () => {
 	it('Create', () => {
 		vm = createVue(
 			{
-				template: `<lp-card></lp-card>`
+				template: `<lp-card />`
 			},
 			true
 		);

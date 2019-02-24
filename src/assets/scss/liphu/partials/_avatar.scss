@@ -1,0 +1,95 @@
+.#{$css-prefix}-avatar {
+	display: inline-block;
+	background-color: $avatar-default-background;
+	border-radius: 100%;
+	width: $avatar-size-base;
+	height: $avatar-size-base;
+	font-size: $font-size-base;
+	font-weight: $avatar-font-weight;
+	line-height: $avatar-size-base;
+	color: $white;
+	text-align: center;
+	text-transform: uppercase;
+	white-space: nowrap;
+	vertical-align: middle;
+	flex: none;
+	position: relative;
+	transition: $transition-base;
+	letter-spacing: -1px;
+	text-indent: -1px;
+
+	@include hover-focus-active {
+		outline: none;
+	}
+
+	&-square,
+	&-square > img,
+	&-square > .shadow {
+		border-radius: $avatar-border-radius;
+	}
+
+	img,
+	svg {
+		width: 100%;
+		height: 100%;
+		display: flex;
+		object-fit: cover;
+		border-radius: 100%;
+	}
+
+	.shadow {
+		position: absolute;
+		content: '';
+		width: 100%;
+		height: 100%;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		display: block;
+		box-shadow: inset 0 0 0.5rem rgba($black, 0.15) !important;
+		border-radius: 100%;
+	}
+
+	.content {
+		position: absolute;
+		left: 50%;
+		transform-origin: 0 center;
+		transform: translateX(-50%);
+	}
+
+	&-xs {
+		width: $avatar-size-xs;
+		height: $avatar-size-xs;
+		font-size: $font-size-xxs;
+		line-height: $avatar-size-xs;
+	}
+
+	&-sm {
+		width: $avatar-size-sm;
+		height: $avatar-size-sm;
+		font-size: $font-size-sm;
+		line-height: $avatar-size-sm;
+	}
+
+	&-lg {
+		width: $avatar-size-lg;
+		height: $avatar-size-lg;
+		font-size: $font-size-lg;
+		line-height: $avatar-size-lg;
+	}
+
+	&-xl {
+		width: $avatar-size-xl;
+		height: $avatar-size-xl;
+		font-size: $font-size-xl;
+		line-height: $avatar-size-xl;
+	}
+}
+
+@each $color, $value in $theme-colors {
+	.#{$css-prefix}-avatar-#{$color} {
+		color: color-yiq($value);
+		background-color: $value;
+	}
+}

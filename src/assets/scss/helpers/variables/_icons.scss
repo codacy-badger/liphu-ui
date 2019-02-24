@@ -1,17 +1,6 @@
 // Font-face definition for the 'FabricMDL2Icons' icon font
 $icon-font-family: 'lp-icons';
 
-@font-face {
-	font-family: 'lp-icons';
-	src: url('~assets/fonts/icons.eot?37t2z2');
-	src: url('~assets/fonts/icons.eot?37t2z2#iefix') format('embedded-opentype'),
-		url('~assets/fonts/icons.ttf?37t2z2') format('truetype'),
-		url('~assets/fonts/icons.woff?37t2z2') format('woff'),
-		url('~assets/fonts/icons.svg?37t2z2#lp-icons') format('svg');
-	font-weight: normal;
-	font-style: normal;
-}
-
 // Sizes
 $icon-size-base: 1rem !default;
 $icon-size-xxs: ($icon-size-base * 0.5) !default;

@@ -13,6 +13,7 @@ import { LpCardMeta as CardMeta } from './components/card';
 import { LpCardGroup as CardGroup } from './components/card';
 import { LpCardDeck as CardDeck } from './components/card';
 import Icon from './components/icon';
+import Avatar from './components/avatar';
 import Row from './components/row';
 import Column from './components/column';
 import Container from './components/container';
@@ -30,7 +31,8 @@ const components = [
 	CardMeta,
 	CardGroup,
 	CardDeck,
-	Icon
+	Icon,
+	Avatar
 ];
 
 const installOptions = (options = {}) => {
@@ -75,7 +77,8 @@ export {
 	CardMeta,
 	CardGroup,
 	CardDeck,
-	Icon
+	Icon,
+	Avatar
 };
 
 export default {
