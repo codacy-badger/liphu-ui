@@ -62,6 +62,11 @@
 								>NG</lp-avatar
 							>
 							<lp-avatar variant="success-dark" class="mx-1" />
+							<lp-avatar
+								variant="danger-dark"
+								icon="diamond"
+								class="mx-1"
+							/>
 						</div>
 					</lp-col>
 					<lp-col col="24" md="12" class="d-flex flex-column">

@@ -3,7 +3,7 @@
 <p align="center">
 <a href="https://travis-ci.com/LiphuCL/liphu-ui"><img src="https://img.shields.io/travis/com/LiphuCL/liphu-ui/master.svg?&style=flat&colorB=16CD97" alt="build status" height="20"></a>
 <a href="https://github.com/LiphuCL/liphu-ui/issues"><img src="https://img.shields.io/github/issues/LiphuCL/liphu-ui.svg?&style=flat&colorB=fabe46" alt="issues open" height="20"></a>
-<img src="https://img.shields.io/badge/commits%20to%20be%20deployed-12-3b79db.svg" alt="commits to be deployed">
+<img src="https://img.shields.io/badge/commits%20to%20be%20deployed-13-3b79db.svg" alt="commits to be deployed">
 <a href="https://www.npmjs.com/package/@liphu/liphu-ui"><img src="https://img.shields.io/npm/v/@liphu/liphu-ui.svg?colorB=3b79db" alt="npm version" height="20"></a>
 <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/license-MIT-3f51b5.svg" alt="license" height="20"></a>
 </p>
@@ -15,10 +15,11 @@ All notable changes to this project will be documented in this file. :grin:
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
-## 0.1.0 - 24 February 2019
+## 0.1.0 - 25 February 2019
 
 ### Added
 
+- :star2: Added: avatar component [`1aef2e2`](https://github.com/LiphuCL/liphu-ui/commit/1aef2e21571c8310c9d1a5b8b822e818b05f7791)
 - :star2: Added: icon component [`f529166`](https://github.com/LiphuCL/liphu-ui/commit/f5291662709c41bc0cca64da3e9ed6b6dc882d11)
 - :star2: Added: missing babel-preset-minify [`80bbd47`](https://github.com/LiphuCL/liphu-ui/commit/80bbd47aa0dfed9f820a42c9f03fa7c06a337d88)
 - :star2: Added: emitter mixin [`b8fe743`](https://github.com/LiphuCL/liphu-ui/commit/b8fe74390d4c36f13132391526c268540c461ee2)
