@@ -1,130 +1,107 @@
-import { createVue, destroyVM } from '../helpers';
+import Vue from 'vue';
+import { mount } from '@vue/test-utils';
+import { Avatar } from 'liphu-ui';
+import { destroyVM } from '../helpers';
 
 describe('Avatar', () => {
-	let vm;
+	let wrapper;
 
 	afterEach(() => {
-		destroyVM(vm);
+		destroyVM(wrapper.vm);
 	});
 
 	it('Create', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar />`
-			},
-			true
-		);
+		wrapper = mount(Avatar);
 
-		let avatar = vm.$el;
-
-		expect(avatar.classList.contains('lp-avatar')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-avatar');
 	});
 
 	it('Variant', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar variant="primary" />`
-			},
-			true
-		);
+		wrapper = mount(Avatar, {
+			propsData: {
+				variant: 'primary'
+			}
+		});
 
-		let avatar = vm.$el;
-
-		expect(avatar.classList.contains('lp-avatar-primary')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-avatar');
+		expect(wrapper.classes()).toContain('lp-avatar-primary');
+		expect(wrapper.props().variant).toBe('primary');
 	});
 
-	it('Sizes', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar size="sm" />`
-			},
-			true
-		);
+	it('Size', () => {
+		wrapper = mount(Avatar, {
+			propsData: {
+				size: 'sm'
+			}
+		});
 
-		let avatar = vm.$el;
+		expect(wrapper.classes()).toContain('lp-avatar');
+		expect(wrapper.classes()).toContain('lp-avatar-sm');
 
-		expect(avatar.classList.contains('lp-avatar-sm')).toBe(true);
+		wrapper.setProps({ size: 64 });
 
-		vm = createVue(
-			{
-				template: `<lp-avatar size="64" />`
-			},
-			true
-		);
-
-		avatar = vm.$el;
-		let style = getComputedStyle(vm.$el);
-
-		expect(style.width).toBe('64px');
-		expect(style.height).toBe('64px');
-		expect(style.lineHeight).toBe('64px');
-		expect(style.fontSize).toBe('32px');
+		return wrapper.vm.$nextTick().then(() => {
+			expect(wrapper.element.style.width).toBe('64px');
+			expect(wrapper.element.style.height).toBe('64px');
+			expect(wrapper.element.style.lineHeight).toBe('64px');
+			expect(wrapper.element.style.fontSize).toBe('32px');
+		});
 	});
 
 	it('Shape', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar shape="square" />`
-			},
-			true
+		wrapper = mount(Avatar, {
+			propsData: {
+				shape: 'square'
+			}
+		});
+
+		expect(wrapper.classes()).toContain('lp-avatar');
+		expect(wrapper.classes()).toContain('lp-avatar-square');
+		expect(wrapper.vm.$options.props.shape.validator('diamond')).toBe(
+			false
 		);
-
-		let avatar = vm.$el;
-
-		expect(avatar.classList.contains('lp-avatar-square')).toBe(true);
-	});
-
-	it('Image', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar src="imageUrl" alt="testImage" />`
-			},
-			true
-		);
-
-		let avatar = vm.$el;
-
-		expect(avatar.classList.contains('bg-transparent')).toBe(true);
-		expect(avatar.querySelector('.lp-avatar>img').src).toBe('imageUrl');
-		expect(avatar.querySelector('.lp-avatar>img').alt).toBe('testImage');
-		expect(
-			avatar.querySelector('.lp-avatar>div').classList.contains('shadow')
-		).toBe(true);
-		expect(avatar.children.length).toBe(2);
 	});
 
 	it('Icon', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar icon="home" />`
-			},
-			true
-		);
+		wrapper = mount(Avatar, {
+			propsData: {
+				icon: 'user'
+			}
+		});
 
-		let avatar = vm.$el;
+		expect(wrapper.classes()).toContain('lp-avatar');
+		expect(wrapper.find('i').classes()).toContain('lp-icon');
+		expect(wrapper.find('i').classes()).toContain('lp-icon-user');
+	});
 
+	it('Image', () => {
+		wrapper = mount(Avatar, {
+			propsData: {
+				src: 'imageUrl',
+				alt: 'imageAlt'
+			}
+		});
+
+		expect(wrapper.classes()).toContain('lp-avatar');
+		expect(wrapper.classes()).toContain('bg-transparent');
+		expect(wrapper.find('img').attributes().src).toBe('imageUrl');
+		expect(wrapper.find('img').attributes().alt).toBe('imageAlt');
 		expect(
-			avatar.querySelector('.lp-avatar>i').classList.contains('lp-icon')
-		).toBe(true);
-		expect(
-			avatar
-				.querySelector('.lp-avatar>i')
-				.classList.contains('lp-icon-home')
-		).toBe(true);
+			wrapper
+				.findAll('div')
+				.at(1)
+				.classes()
+		).toContain('shadow');
 	});
 
 	it('Content', () => {
-		vm = createVue(
-			{
-				template: `<lp-avatar>Liphu</lp-avatar>`
-			},
-			true
-		);
+		wrapper = mount(Avatar, {
+			slots: {
+				default: 'Liphu'
+			}
+		});
 
-		let avatar = vm.$el;
-
-		expect(
-			avatar.querySelector('.lp-avatar>.content').textContent.trim()
-		).toEqual('Liphu');
+		expect(wrapper.classes()).toContain('lp-avatar');
+		expect(wrapper.find('span.content').text()).toBe('Liphu');
 	});
 });

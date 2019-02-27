@@ -36,19 +36,17 @@ const components = [
 ];
 
 const installOptions = (options = {}) => {
-	if (!Vue.prototype.$liphu) {
-		Vue.prototype.$liphu = {
-			componentsPrefix: options.prefix || 'lp',
-			cssPrefix: options.cssPrefix || 'lp',
-			size: options.size || '',
-			zIndex: options.zIndex || 2000,
-			dropdownArrows: false
-		};
-	}
+	return {
+		componentsPrefix: options.prefix || 'lp',
+		cssPrefix: options.cssPrefix || 'lp',
+		size: options.size || '',
+		zIndex: options.zIndex || 2000,
+		dropdownArrows: false
+	};
 };
 
 const install = (options = {}) => {
-	installOptions(options);
+	Vue.prototype.$liphu = installOptions(options);
 
 	components.forEach(component => {
 		component.name = `${

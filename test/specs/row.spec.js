@@ -1,61 +1,50 @@
-import { createVue, destroyVM } from '../helpers';
+import { mount } from '@vue/test-utils';
+import { Row } from 'liphu-ui';
+import { destroyVM } from '../helpers';
 
 describe('Row', () => {
-	let vm;
+	let wrapper;
 
 	afterEach(() => {
-		destroyVM(vm);
+		destroyVM(wrapper.vm);
 	});
 
 	it('Create', () => {
-		vm = createVue(
-			{
-				template: '<lp-row></lp-row>'
-			},
-			true
-		);
+		wrapper = mount(Row);
 
-		let row = vm.$el;
-
-		expect(row.classList.contains('lp-row')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-row');
 	});
 
 	it('No gutters', () => {
-		vm = createVue(
-			{
-				template: '<lp-row no-gutters></lp-row>'
-			},
-			true
-		);
+		wrapper = mount(Row, {
+			propsData: {
+				noGutters: true
+			}
+		});
 
-		let row = vm.$el;
-
-		expect(row.classList.contains('no-gutters')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-row');
+		expect(wrapper.classes()).toContain('no-gutters');
 	});
 
 	it('Container', () => {
-		vm = createVue(
-			{
-				template: '<lp-row no-gutters is-container></lp-row>'
-			},
-			true
-		);
+		wrapper = mount(Row, {
+			propsData: {
+				isContainer: true
+			}
+		});
 
-		let row = vm.$el;
-
-		expect(row.classList.contains('lp-container')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-row');
+		expect(wrapper.classes()).toContain('lp-container');
 	});
 
 	it('Container Fluid', () => {
-		vm = createVue(
-			{
-				template: '<lp-row no-gutters is-container-fluid></lp-row>'
-			},
-			true
-		);
+		wrapper = mount(Row, {
+			propsData: {
+				isContainerFluid: true
+			}
+		});
 
-		let row = vm.$el;
-
-		expect(row.classList.contains('lp-container-fluid')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-row');
+		expect(wrapper.classes()).toContain('lp-container-fluid');
 	});
 });

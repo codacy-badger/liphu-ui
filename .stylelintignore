@@ -2,3 +2,5 @@ dist
 site/dist
 node_modules
 *.vue
+coverage
+.nyc_output

@@ -36,7 +36,6 @@ module.exports = (config, path, WebpackBar) => ({
 				test: /\.(sa|sc|c)ss$/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					MiniCssExtractPlugin.loader,
 					'css-loader',
 					'postcss-loader',
 					{

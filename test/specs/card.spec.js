@@ -1,261 +1,212 @@
-import { createVue, destroyVM } from '../helpers';
+import { mount } from '@vue/test-utils';
+import { Card, CardMeta, CardGroup, CardDeck } from 'liphu-ui';
+import { destroyVM } from '../helpers';
 
 describe('Card', () => {
-	let vm;
+	let wrapper;
 
 	afterEach(() => {
-		destroyVM(vm);
+		destroyVM(wrapper.vm);
 	});
 
 	it('Create', () => {
-		vm = createVue(
-			{
-				template: `<lp-card />`
-			},
-			true
-		);
+		wrapper = mount(Card);
 
-		let card = vm.$el;
-
-		expect(card.classList.contains('lp-card')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-card');
 	});
 
 	it('Hoverable', () => {
-		vm = createVue(
-			{
-				template: `<lp-card hoverable></lp-card>`
-			},
-			true
-		);
+		wrapper = mount(Card, {
+			propsData: {
+				hoverable: 'true'
+			}
+		});
 
-		let card = vm.$el;
-
-		expect(card.classList.contains('lp-card-hoverable')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-card');
+		expect(wrapper.classes()).toContain('lp-card-hoverable');
 	});
 
 	it('Title', () => {
-		vm = createVue(
-			{
-				template: `<lp-card title="Card title"></lp-card>`
-			},
-			true
-		);
+		wrapper = mount(Card, {
+			propsData: {
+				title: 'Card title'
+			}
+		});
 
-		let card = vm.$el;
-
-		expect(
-			card
-				.querySelector(
-					'.lp-card-header>.lp-card-header-wrapper>.lp-card-title'
-				)
-				.textContent.trim()
-		).toEqual('Card title');
+		expect(wrapper.props().title).toBe('Card title');
+		expect(wrapper.find('div.lp-card-title').text()).toBe('Card title');
 	});
 
 	it('Slot:Title', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <h1 slot="title">Slot:Title</h1>
-                </lp-card>`
-			},
-			true
-		);
+		wrapper = mount(Card, {
+			slots: {
+				title: '<h1>Slot:Title</h1>'
+			}
+		});
 
-		let card = vm.$el;
-		let titleElm = card.querySelector(
-			'.lp-card-header>.lp-card-header-wrapper>.lp-card-title'
+		expect(wrapper.find('div.lp-card-title>h1').html()).toBe(
+			'<h1>Slot:Title</h1>'
 		);
-
-		expect(titleElm).not.toBeNull();
-		expect(titleElm.textContent.trim()).toEqual('Slot:Title');
+		expect(wrapper.find('div.lp-card-title').text()).toBe('Slot:Title');
 	});
 
 	it('Slot:Header', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <h1 slot="header">Slot:Header</h1>
-                </lp-card>`
-			},
-			true
-		);
+		wrapper = mount(Card, {
+			slots: {
+				header: '<h1>Slot:Header</h1>'
+			}
+		});
 
-		let card = vm.$el;
-		let headerElm = card.querySelector(
-			'.lp-card-header>.lp-card-header-wrapper'
-		).children[0];
-
-		expect(headerElm).not.toBeNull();
-		expect(headerElm.textContent).toEqual('Slot:Header');
+		expect(
+			wrapper.find('div.lp-card-header>.lp-card-header-wrapper>h1').html()
+		).toBe('<h1>Slot:Header</h1>');
+		expect(
+			wrapper.find('div.lp-card-header>.lp-card-header-wrapper>h1').text()
+		).toBe('Slot:Header');
 	});
 
 	it('Slot:Extra', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <a slot="extra">Slot:Extra</a>
-                </lp-card>`
-			},
-			true
-		);
+		wrapper = mount(Card, {
+			slots: {
+				extra: '<a>Slot:Extra</a>'
+			}
+		});
 
-		let card = vm.$el;
-		let extraElm = card.querySelector(
-			'.lp-card-header>.lp-card-header-wrapper>.lp-card-header-extra'
-		);
-
-		expect(extraElm).not.toBeNull();
-		expect(extraElm.textContent.trim()).toEqual('Slot:Extra');
+		expect(
+			wrapper
+				.find(
+					'div.lp-card-header>.lp-card-header-wrapper>.lp-card-header-extra>a'
+				)
+				.html()
+		).toBe('<a>Slot:Extra</a>');
+		expect(
+			wrapper
+				.find(
+					'div.lp-card-header>.lp-card-header-wrapper>.lp-card-header-extra>a'
+				)
+				.text()
+		).toBe('Slot:Extra');
 	});
 
 	it('Slot:Default', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    Slot:Default
-                </lp-card>`
-			},
-			true
-		);
+		wrapper = mount(Card, {
+			slots: {
+				default: '<p>Slot:Default</p>'
+			}
+		});
 
-		let card = vm.$el;
-
-		expect(card.querySelector('.lp-card-body').textContent.trim()).toEqual(
-			'Slot:Default'
+		expect(wrapper.find('div.lp-card-body>p').html()).toBe(
+			'<p>Slot:Default</p>'
 		);
+		expect(wrapper.find('div.lp-card-body>p').text()).toBe('Slot:Default');
 	});
 
 	it('Slot:Image-Top', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <img
-						slot="image-top"
-						src="https://avatars3.githubusercontent.com/u/13702320?s=460&v=4"
-						alt="bodoque"
-					/>
-                </lp-card>`
-			},
-			true
+		wrapper = mount(Card, {
+			slots: {
+				'image-top':
+					'<img src="https://avatars3.githubusercontent.com/u/13702320?s=460&v=4" alt="bodoque" />'
+			}
+		});
+
+		let image = wrapper.find('div.lp-card-image');
+
+		expect(image.classes()).toContain('lp-card-image-top');
+		expect(image.find('img').attributes().src).toEqual(
+			'https://avatars3.githubusercontent.com/u/13702320?s=460&v=4'
 		);
-
-		let card = vm.$el;
-		let imageElm = card.querySelector('.lp-card-image');
-
-		expect(imageElm).not.toBeNull();
-		expect(imageElm.classList.contains('lp-card-image-top')).toBe(true);
-		expect(imageElm.children[0].tagName).toEqual('IMG');
+		expect(image.find('img').attributes().alt).toEqual('bodoque');
 	});
 
 	it('Slot:Image-Bottom', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <img
-						slot="image-bottom"
-						src="https://avatars3.githubusercontent.com/u/13702320?s=460&v=4"
-						alt="bodoque"
-					/>
-                </lp-card>`
-			},
-			true
+		wrapper = mount(Card, {
+			slots: {
+				'image-bottom':
+					'<img src="https://avatars3.githubusercontent.com/u/13702320?s=460&v=4" alt="bodoque" />'
+			}
+		});
+
+		let image = wrapper.find('div.lp-card-image');
+
+		expect(image.classes()).toContain('lp-card-image-bottom');
+		expect(image.find('img').attributes().src).toEqual(
+			'https://avatars3.githubusercontent.com/u/13702320?s=460&v=4'
 		);
-
-		let card = vm.$el;
-		let imageElm = card.querySelector('.lp-card-image');
-
-		expect(imageElm).not.toBeNull();
-		expect(imageElm.classList.contains('lp-card-image-bottom')).toBe(true);
-		expect(imageElm.children[0].tagName).toEqual('IMG');
+		expect(image.find('img').attributes().alt).toEqual('bodoque');
 	});
 
 	it('Slot:Meta', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <lp-card-meta
-						slot="meta"
-						title="Juan Carlos Bodoque"
-						description="www.liphu.com"
-					/>
-                </lp-card>`
+		wrapper = mount(Card, {
+			slots: {
+				meta:
+					'<lp-card-meta title="Juan Carlos Bodoque" description="www.liphu.com" />'
 			},
-			true
-		);
+			stubs: {
+				'lp-card-meta': CardMeta
+			}
+		});
 
-		let card = vm.$el;
-		let metaElm = card.querySelector('.lp-card-meta');
-		let metaDetailElm = card.querySelector(
-			'.lp-card-meta>.lp-card-meta-detail'
-		);
+		let meta = wrapper.find(CardMeta);
+		let metaDivs = meta.findAll('div');
 
-		expect(metaElm).not.toBeNull();
-		expect(metaDetailElm).not.toBeNull();
-		expect(
-			metaDetailElm.children[0].classList.contains('lp-card-meta-title')
-		).toBe(true);
-		expect(metaDetailElm.children[0].textContent.trim()).toEqual(
-			'Juan Carlos Bodoque'
-		);
-		expect(
-			metaDetailElm.children[1].classList.contains(
-				'lp-card-meta-description'
-			)
-		).toBe(true);
-		expect(metaDetailElm.children[1].textContent.trim()).toEqual(
-			'www.liphu.com'
-		);
+		expect(meta.props().title).toEqual('Juan Carlos Bodoque');
+		expect(meta.props().description).toEqual('www.liphu.com');
+		expect(meta.classes()).toContain('lp-card-meta');
+		expect(metaDivs.at(1).classes()).toContain('lp-card-meta-detail');
+		expect(metaDivs.at(2).classes()).toContain('lp-card-meta-title');
+		expect(metaDivs.at(3).classes()).toContain('lp-card-meta-description');
 	});
 
 	it('Slot:Footer', () => {
-		vm = createVue(
-			{
-				template: `<lp-card>
-                    <span slot="footer">Slot:Footer</span>
-                </lp-card>`
-			},
-			true
+		wrapper = mount(Card, {
+			slots: {
+				footer: '<p>Slot:Footer</p>'
+			}
+		});
+
+		expect(wrapper.find('div.lp-card-footer>p').html()).toBe(
+			'<p>Slot:Footer</p>'
 		);
-
-		let card = vm.$el;
-		let footerElm = card.querySelector('.lp-card>.lp-card-footer');
-
-		expect(footerElm).not.toBeNull();
-		expect(footerElm.children[0].textContent.trim()).toEqual('Slot:Footer');
+		expect(wrapper.find('div.lp-card-footer>p').text()).toBe('Slot:Footer');
 	});
 
 	it('Card Group', () => {
-		vm = createVue(
-			{
-				template: `<lp-card-group>
+		wrapper = mount(CardGroup, {
+			slots: {
+				default: `
                     <lp-card />
                     <lp-card />
                     <lp-card />
-                </lp-card-group>`
+                `
 			},
-			true
-		);
+			stubs: {
+				'lp-card': Card
+			}
+		});
 
-		let cardGroup = vm.$el;
+		let cards = wrapper.findAll(Card);
 
-		expect(cardGroup.classList.contains('lp-card-group')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-card-group');
+		expect(cards.length).toBe(3);
 	});
 
 	it('Card Deck', () => {
-		vm = createVue(
-			{
-				template: `<lp-card-deck>
+		wrapper = mount(CardDeck, {
+			slots: {
+				default: `
                     <lp-card />
                     <lp-card />
                     <lp-card />
-                </lp-card-deck>`
+                `
 			},
-			true
-		);
+			stubs: {
+				'lp-card': Card
+			}
+		});
 
-		let cardGroup = vm.$el;
+		let cards = wrapper.findAll(Card);
 
-		expect(cardGroup.classList.contains('lp-card-deck')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-card-deck');
+		expect(cards.length).toBe(3);
 	});
 });

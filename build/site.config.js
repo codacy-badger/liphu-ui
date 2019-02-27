@@ -4,17 +4,22 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const barConfig = {
 	name: 'Site',
-	color: '#16cd97'
+	color: '#16cd97',
+	fancy: true,
+	profile: true
 };
 
 const isProd = process.env.NODE_ENV === 'production';
+const isTest = process.env.NODE_ENV === 'test';
 
 module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
-	mode: process.env.NODE_ENV,
-	entry: {
-		liphu: ['./src/index.js', './src/assets/scss/liphu.scss'],
-		site: './site/src/entry.js'
-	},
+	mode: isProd || isTest ? 'production' : 'development',
+	entry: isTest
+		? { liphu: './src/index.js' }
+		: {
+				liphu: ['./src/index.js', './src/assets/scss/liphu.scss'],
+				site: './site/src/entry.js'
+		  },
 	devServer: {
 		//contentBase: path.join(__dirname, 'dist'),
 		host: '0.0.0.0',
@@ -63,7 +68,9 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 		path: path.resolve(__dirname, '../site/dist'),
 		publicPath: '/',
 		filename: isProd ? '[name].js' : '[name].[hash:7].js',
-		chunkFilename: isProd ? '[name].js' : '[name].[hash:7].js'
+		chunkFilename: isProd ? '[name].js' : '[name].[hash:7].js',
+		devtoolModuleFilenameTemplate: '[absolute-resource-path]',
+		devtoolFallbackModuleFilenameTemplate: '[absolute-resource-path]?[hash]'
 	},
 	resolve: {
 		extensions: ['.js', '.vue', '.json', '.scss', '.css'],
@@ -88,7 +95,10 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 				test: /\.(jsx?|babel|es6)$/,
 				include: process.cwd(),
 				exclude: config.jsexclude,
-				loader: 'babel-loader'
+				use: {
+					loader: 'babel-loader',
+					options: isTest ? { envName: 'test' } : {}
+				}
 			},
 			{
 				test: /\.vue$/,
@@ -106,7 +116,9 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 			{
 				test: /\.(sa|sc|c)ss$/,
 				use: [
-					MiniCssExtractPlugin.loader,
+					isTest
+						? { loader: 'style-loader' }
+						: MiniCssExtractPlugin.loader,
 					'css-loader',
 					'postcss-loader',
 					{
@@ -162,6 +174,7 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 			}
 		]
 	},
+	devtool: 'inline-cheap-module-source-map',
 	plugins: [
 		new VueLoaderPlugin(),
 		new WebpackBar(barConfig),

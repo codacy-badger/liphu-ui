@@ -69,11 +69,7 @@ exports.alias = {
 	mixins: path.resolve(__dirname, '../src/mixins'),
 	site: path.resolve(__dirname, '../site/src'),
 	vue:
-		process.env.NODE_ENV === 'production'
-			? 'vue/dist/vue.min'
-			: 'vue/dist/vue',
-	vue$:
-		process.env.NODE_ENV === 'production'
+		process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'test'
 			? 'vue/dist/vue.min'
 			: 'vue/dist/vue'
 };
@@ -83,6 +79,18 @@ exports.vue = {
 	commonjs: 'vue',
 	commonjs2: 'vue',
 	amd: 'vue'
+};
+
+exports.test = {
+	root: 'Vue',
+	commonjs: 'vue',
+	commonjs2: 'vue',
+	amd: 'vue',
+	assets: path.resolve(__dirname, '../src/assets'),
+	styles: path.resolve(__dirname, '../src/assets/scss'),
+	utils: path.resolve(__dirname, '../src/utils'),
+	mixins: path.resolve(__dirname, '../src/mixins'),
+	site: path.resolve(__dirname, '../site/src')
 };
 
 exports.jsexclude = /node_modules|utils\/popper\.js|utils\/date.js/;

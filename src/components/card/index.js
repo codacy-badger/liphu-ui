@@ -4,6 +4,7 @@ import LpCardGroup from './src/card-group';
 import LpCardDeck from './src/card-deck';
 
 [LpCard, LpCardMeta, LpCardGroup, LpCardDeck].forEach(component => {
+	/* istanbul ignore next */
 	component.install = Vue => {
 		Vue.component(component.name, component);
 	};

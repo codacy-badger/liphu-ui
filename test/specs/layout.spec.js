@@ -1,35 +1,31 @@
-import { createVue, destroyVM } from '../helpers';
+import { mount } from '@vue/test-utils';
+import { Layout } from 'liphu-ui';
+import { destroyVM } from '../helpers';
 
 describe('Layout', () => {
-	let vm;
+	let wrapper;
 
 	afterEach(() => {
-		destroyVM(vm);
+		destroyVM(wrapper.vm);
 	});
 
 	it('Create', () => {
-		vm = createVue(
-			{
-				template: '<lp-layout></lp-layout>'
-			},
-			true
-		);
+		wrapper = mount(Layout);
 
-		let layout = vm.$el;
-
-		expect(layout.classList.contains('lp-layout')).toBe(true);
+		expect(wrapper.classes()).toContain('lp-layout');
 	});
 
 	it('Direction', () => {
-		vm = createVue(
-			{
-				template: '<lp-layout direction="vertical"></lp-layout>'
-			},
-			true
+		wrapper = mount(Layout, {
+			propsData: {
+				direction: 'vertical'
+			}
+		});
+
+		expect(wrapper.classes()).toContain('lp-layout');
+		expect(wrapper.classes()).toContain('lp-layout-vertical');
+		expect(wrapper.vm.$options.props.direction.validator('diagonal')).toBe(
+			false
 		);
-
-		let layout = vm.$el;
-
-		expect(layout.classList.contains('lp-layout-vertical')).toBe(true);
 	});
 });

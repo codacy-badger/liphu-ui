@@ -1,7 +1,10 @@
 const path = require('path');
 const WebpackBar = require('webpackbar');
 const { VueLoaderPlugin } = require('vue-loader');
+const Vue = require('vue');
 const config = require('./base.config');
-const site = require('./site.config');
+const test = require('./test.config');
 
-module.exports = site(config, path, WebpackBar, VueLoaderPlugin);
+Vue.config.devtools = false;
+
+module.exports = test(config, path, WebpackBar, VueLoaderPlugin);
