@@ -1,18 +1,17 @@
 import { mount } from '@vue/test-utils';
 import { Card, CardMeta, CardGroup, CardDeck } from 'liphu-ui';
-import { destroyVM } from '../helpers';
 
 describe('Card', () => {
 	let wrapper;
 
 	afterEach(() => {
-		destroyVM(wrapper.vm);
+		wrapper.destroy();
 	});
 
 	it('Create', () => {
 		wrapper = mount(Card);
 
-		expect(wrapper.classes()).toContain('lp-card');
+		expect(wrapper.classes()).contains('lp-card');
 	});
 
 	it('Hoverable', () => {
@@ -22,8 +21,8 @@ describe('Card', () => {
 			}
 		});
 
-		expect(wrapper.classes()).toContain('lp-card');
-		expect(wrapper.classes()).toContain('lp-card-hoverable');
+		expect(wrapper.classes()).contains('lp-card');
+		expect(wrapper.classes()).contains('lp-card-hoverable');
 	});
 
 	it('Title', () => {
@@ -33,8 +32,8 @@ describe('Card', () => {
 			}
 		});
 
-		expect(wrapper.props().title).toBe('Card title');
-		expect(wrapper.find('div.lp-card-title').text()).toBe('Card title');
+		expect(wrapper.props().title).to.equal('Card title');
+		expect(wrapper.find('div.lp-card-title').text()).to.equal('Card title');
 	});
 
 	it('Slot:Title', () => {
@@ -44,10 +43,10 @@ describe('Card', () => {
 			}
 		});
 
-		expect(wrapper.find('div.lp-card-title>h1').html()).toBe(
+		expect(wrapper.find('div.lp-card-title>h1').html()).to.equal(
 			'<h1>Slot:Title</h1>'
 		);
-		expect(wrapper.find('div.lp-card-title').text()).toBe('Slot:Title');
+		expect(wrapper.find('div.lp-card-title').text()).to.equal('Slot:Title');
 	});
 
 	it('Slot:Header', () => {
@@ -59,10 +58,10 @@ describe('Card', () => {
 
 		expect(
 			wrapper.find('div.lp-card-header>.lp-card-header-wrapper>h1').html()
-		).toBe('<h1>Slot:Header</h1>');
+		).to.equal('<h1>Slot:Header</h1>');
 		expect(
 			wrapper.find('div.lp-card-header>.lp-card-header-wrapper>h1').text()
-		).toBe('Slot:Header');
+		).to.equal('Slot:Header');
 	});
 
 	it('Slot:Extra', () => {
@@ -78,14 +77,14 @@ describe('Card', () => {
 					'div.lp-card-header>.lp-card-header-wrapper>.lp-card-header-extra>a'
 				)
 				.html()
-		).toBe('<a>Slot:Extra</a>');
+		).to.equal('<a>Slot:Extra</a>');
 		expect(
 			wrapper
 				.find(
 					'div.lp-card-header>.lp-card-header-wrapper>.lp-card-header-extra>a'
 				)
 				.text()
-		).toBe('Slot:Extra');
+		).to.equal('Slot:Extra');
 	});
 
 	it('Slot:Default', () => {
@@ -95,10 +94,12 @@ describe('Card', () => {
 			}
 		});
 
-		expect(wrapper.find('div.lp-card-body>p').html()).toBe(
+		expect(wrapper.find('div.lp-card-body>p').html()).to.equal(
 			'<p>Slot:Default</p>'
 		);
-		expect(wrapper.find('div.lp-card-body>p').text()).toBe('Slot:Default');
+		expect(wrapper.find('div.lp-card-body>p').text()).to.equal(
+			'Slot:Default'
+		);
 	});
 
 	it('Slot:Image-Top', () => {
@@ -111,11 +112,11 @@ describe('Card', () => {
 
 		let image = wrapper.find('div.lp-card-image');
 
-		expect(image.classes()).toContain('lp-card-image-top');
-		expect(image.find('img').attributes().src).toEqual(
+		expect(image.classes()).contains('lp-card-image-top');
+		expect(image.find('img').attributes().src).to.equal(
 			'https://avatars3.githubusercontent.com/u/13702320?s=460&v=4'
 		);
-		expect(image.find('img').attributes().alt).toEqual('bodoque');
+		expect(image.find('img').attributes().alt).to.equal('bodoque');
 	});
 
 	it('Slot:Image-Bottom', () => {
@@ -128,11 +129,11 @@ describe('Card', () => {
 
 		let image = wrapper.find('div.lp-card-image');
 
-		expect(image.classes()).toContain('lp-card-image-bottom');
-		expect(image.find('img').attributes().src).toEqual(
+		expect(image.classes()).contains('lp-card-image-bottom');
+		expect(image.find('img').attributes().src).to.equal(
 			'https://avatars3.githubusercontent.com/u/13702320?s=460&v=4'
 		);
-		expect(image.find('img').attributes().alt).toEqual('bodoque');
+		expect(image.find('img').attributes().alt).to.equal('bodoque');
 	});
 
 	it('Slot:Meta', () => {
@@ -149,12 +150,12 @@ describe('Card', () => {
 		let meta = wrapper.find(CardMeta);
 		let metaDivs = meta.findAll('div');
 
-		expect(meta.props().title).toEqual('Juan Carlos Bodoque');
-		expect(meta.props().description).toEqual('www.liphu.com');
-		expect(meta.classes()).toContain('lp-card-meta');
-		expect(metaDivs.at(1).classes()).toContain('lp-card-meta-detail');
-		expect(metaDivs.at(2).classes()).toContain('lp-card-meta-title');
-		expect(metaDivs.at(3).classes()).toContain('lp-card-meta-description');
+		expect(meta.props().title).to.equal('Juan Carlos Bodoque');
+		expect(meta.props().description).to.equal('www.liphu.com');
+		expect(meta.classes()).contains('lp-card-meta');
+		expect(metaDivs.at(1).classes()).contains('lp-card-meta-detail');
+		expect(metaDivs.at(2).classes()).contains('lp-card-meta-title');
+		expect(metaDivs.at(3).classes()).contains('lp-card-meta-description');
 	});
 
 	it('Slot:Footer', () => {
@@ -164,10 +165,12 @@ describe('Card', () => {
 			}
 		});
 
-		expect(wrapper.find('div.lp-card-footer>p').html()).toBe(
+		expect(wrapper.find('div.lp-card-footer>p').html()).to.equal(
 			'<p>Slot:Footer</p>'
 		);
-		expect(wrapper.find('div.lp-card-footer>p').text()).toBe('Slot:Footer');
+		expect(wrapper.find('div.lp-card-footer>p').text()).to.equal(
+			'Slot:Footer'
+		);
 	});
 
 	it('Card Group', () => {
@@ -186,8 +189,8 @@ describe('Card', () => {
 
 		let cards = wrapper.findAll(Card);
 
-		expect(wrapper.classes()).toContain('lp-card-group');
-		expect(cards.length).toBe(3);
+		expect(wrapper.classes()).contains('lp-card-group');
+		expect(cards.length).to.equal(3);
 	});
 
 	it('Card Deck', () => {
@@ -206,7 +209,7 @@ describe('Card', () => {
 
 		let cards = wrapper.findAll(Card);
 
-		expect(wrapper.classes()).toContain('lp-card-deck');
-		expect(cards.length).toBe(3);
+		expect(wrapper.classes()).contains('lp-card-deck');
+		expect(cards.length).to.equal(3);
 	});
 });

@@ -100,10 +100,10 @@ export default {
 			if (this.variant === 'random') this.setVariant();
 		});
 	},
-	update() {
+	updated() {
 		this.$nextTick(() => {
-			this.setScale();
-			this.setVariant();
+			if (this.autoFit) this.setScale();
+			if (this.variant === 'random') this.setVariant();
 		});
 	},
 	methods: {
@@ -114,6 +114,8 @@ export default {
 				let avatarWidth = this.$el.getBoundingClientRect().width;
 				if (avatarWidth - 14 < childrenWidth) {
 					this.scale = (avatarWidth - 14) / childrenWidth;
+				} else {
+					this.scale = 1;
 				}
 			} else {
 				this.scale = 1;

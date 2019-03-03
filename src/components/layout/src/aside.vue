@@ -24,14 +24,10 @@ export default {
 		},
 		style() {
 			let style = {};
-
-			if (this.width) {
-				style.flex = `0 0 ${this.width}px`;
-				style.maxWidth = `${this.width}px`;
-				style.minWidth = `${this.width}px`;
-				style.width = `${this.width}px`;
-			}
-
+			style.flex = `0 0 ${this.width}px`;
+			style.maxWidth = `${this.width}px`;
+			style.minWidth = `${this.width}px`;
+			style.width = `${this.width}px`;
 			return style;
 		}
 	}

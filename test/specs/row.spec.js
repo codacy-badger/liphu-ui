@@ -1,18 +1,17 @@
 import { mount } from '@vue/test-utils';
 import { Row } from 'liphu-ui';
-import { destroyVM } from '../helpers';
 
 describe('Row', () => {
 	let wrapper;
 
 	afterEach(() => {
-		destroyVM(wrapper.vm);
+		wrapper.destroy();
 	});
 
 	it('Create', () => {
 		wrapper = mount(Row);
 
-		expect(wrapper.classes()).toContain('lp-row');
+		expect(wrapper.classes()).contains('lp-row');
 	});
 
 	it('No gutters', () => {
@@ -22,8 +21,8 @@ describe('Row', () => {
 			}
 		});
 
-		expect(wrapper.classes()).toContain('lp-row');
-		expect(wrapper.classes()).toContain('no-gutters');
+		expect(wrapper.classes()).contains('lp-row');
+		expect(wrapper.classes()).contains('no-gutters');
 	});
 
 	it('Container', () => {
@@ -33,8 +32,8 @@ describe('Row', () => {
 			}
 		});
 
-		expect(wrapper.classes()).toContain('lp-row');
-		expect(wrapper.classes()).toContain('lp-container');
+		expect(wrapper.classes()).contains('lp-row');
+		expect(wrapper.classes()).contains('lp-container');
 	});
 
 	it('Container Fluid', () => {
@@ -44,7 +43,7 @@ describe('Row', () => {
 			}
 		});
 
-		expect(wrapper.classes()).toContain('lp-row');
-		expect(wrapper.classes()).toContain('lp-container-fluid');
+		expect(wrapper.classes()).contains('lp-row');
+		expect(wrapper.classes()).contains('lp-container-fluid');
 	});
 });

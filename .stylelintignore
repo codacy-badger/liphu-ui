@@ -1,6 +1,5 @@
 dist
 site/dist
 node_modules
+test/coverage
 *.vue
-coverage
-.nyc_output

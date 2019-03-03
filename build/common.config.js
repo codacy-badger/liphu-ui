@@ -96,7 +96,7 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 	},
 	plugins: [
 		new WebpackBar(barConfig),
-		new CleanWebpackPlugin(['dist', 'docs/build'], {
+		new CleanWebpackPlugin(['dist', 'site/dist'], {
 			root: path.resolve(__dirname, '../'),
 			verbose: false
 		}),

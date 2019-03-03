@@ -46,9 +46,13 @@
 							<lp-avatar variant="random" class="mx-1"
 								>MV</lp-avatar
 							>
-							<lp-avatar class="mx-1">USER</lp-avatar>
-							<lp-avatar variant="primary" class="mx-1"
-								>primary</lp-avatar
+							<lp-avatar class="mx-1" content="USER" />
+							<lp-avatar
+								ref="autoFitAvatar"
+								variant="primary"
+								class="mx-1"
+								:auto-fit="isAutoFit"
+								>{{ autoFit }}</lp-avatar
 							>
 							<lp-avatar
 								src="https://pbs.twimg.com/profile_images/1811674855/images-2_400x400.jpeg"
@@ -67,6 +71,9 @@
 								icon="diamond"
 								class="mx-1"
 							/>
+							<button @click="changeAutoFit">
+								Change AutoFit
+							</button>
 						</div>
 					</lp-col>
 					<lp-col col="24" md="12" class="d-flex flex-column">
@@ -81,3 +88,20 @@
 		</lp-col>
 	</lp-row>
 </template>
+<script>
+export default {
+	data() {
+		return {
+			autoFit: 'Liphu',
+			isAutoFit: true
+		};
+	},
+	methods: {
+		changeAutoFit() {
+			this.autoFit = this.autoFit == 'Liphu' ? 'LP' : 'Liphu';
+			//this.isAutoFit = this.autoFit == 'Liphu' ? false : true;
+			//this.$refs.autoFitAvatar.setScale();
+		}
+	}
+};
+</script>
