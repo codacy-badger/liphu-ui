@@ -4,13 +4,15 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const barConfig = {
 	name: 'Site',
-	color: '#16cd97'
+	color: '#16cd97',
+	fancy: true,
+	profile: true
 };
 
 const isProd = process.env.NODE_ENV === 'production';
 
 module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
-	mode: process.env.NODE_ENV,
+	mode: isProd ? 'production' : 'development',
 	entry: {
 		liphu: ['./src/index.js', './src/assets/scss/liphu.scss'],
 		site: './site/src/entry.js'
@@ -69,7 +71,7 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 		extensions: ['.js', '.vue', '.json', '.scss', '.css'],
 		alias: {
 			...config.alias,
-			...{ site: path.resolve(__dirname, '../site/src') }
+			site: path.resolve(__dirname, '../site/src')
 		},
 		modules: ['node_modules']
 	},
@@ -92,31 +94,26 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 			},
 			{
 				test: /\.vue$/,
-				loader: 'vue-loader',
-				options: {
-					compilerOptions: {
-						preserveWhitespace: false
-					}
-				}
-			},
-			{
-				test: /\.scss$/,
 				use: [
 					{
-						loader: 'style-loader' // creates style nodes from JS strings
-					},
+						loader: 'vue-loader',
+						options: {
+							compilerOptions: {
+								preserveWhitespace: false
+							}
+						}
+					}
+				]
+			},
+			{
+				test: /\.(sa|sc|c)ss$/,
+				use: [
 					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader'
-					},
-					{
-						loader: 'postcss-loader'
-					},
+					'css-loader',
+					'postcss-loader',
 					{
 						loader: 'sass-loader',
 						options: {
-							sourceMap: true,
-							sourceMapContents: false,
 							includePaths: [
 								path.resolve(__dirname, '../src/assets/scss'),
 								path.resolve(__dirname, '../src/assets'),
@@ -137,13 +134,6 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 					}
 				]
 			},
-			// {
-			// 	test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-			// 	loader: 'url-loader',
-			// 	query: {
-			// 		name: path.posix.join('assets', '[name].[hash:7].[ext]')
-			// 	}
-			// },
 			{
 				test: /\.(otf|ttf|woff2?|eot)$/,
 				use: [
@@ -178,7 +168,8 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 		new VueLoaderPlugin(),
 		new WebpackBar(barConfig),
 		new MiniCssExtractPlugin({
-			filename: isProd ? 'css/[name].css' : 'css/[name].[hash:7].css'
+			filename: isProd ? 'css/[name].css' : 'css/[name].[hash:7].css',
+			chunkFilename: isProd ? 'css/[id].css' : 'css/[id].[hash:7].css'
 		}),
 		new HtmlWebpackPlugin({
 			template: './site/index.html',

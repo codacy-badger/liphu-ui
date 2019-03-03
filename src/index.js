@@ -13,6 +13,7 @@ import { LpCardMeta as CardMeta } from './components/card';
 import { LpCardGroup as CardGroup } from './components/card';
 import { LpCardDeck as CardDeck } from './components/card';
 import Icon from './components/icon';
+import Avatar from './components/avatar';
 import Row from './components/row';
 import Column from './components/column';
 import Container from './components/container';
@@ -30,23 +31,22 @@ const components = [
 	CardMeta,
 	CardGroup,
 	CardDeck,
-	Icon
+	Icon,
+	Avatar
 ];
 
 const installOptions = (options = {}) => {
-	if (!Vue.prototype.$liphu) {
-		Vue.prototype.$liphu = {
-			componentsPrefix: options.prefix || 'lp',
-			cssPrefix: options.cssPrefix || 'lp',
-			size: options.size || '',
-			zIndex: options.zIndex || 2000,
-			dropdownArrows: false
-		};
-	}
+	return {
+		componentsPrefix: options.prefix || 'lp',
+		cssPrefix: options.cssPrefix || 'lp',
+		size: options.size || '',
+		zIndex: options.zIndex || 2000,
+		dropdownArrows: false
+	};
 };
 
 const install = (options = {}) => {
-	installOptions(options);
+	Vue.prototype.$liphu = installOptions(options);
 
 	components.forEach(component => {
 		component.name = `${
@@ -75,7 +75,8 @@ export {
 	CardMeta,
 	CardGroup,
 	CardDeck,
-	Icon
+	Icon,
+	Avatar
 };
 
 export default {

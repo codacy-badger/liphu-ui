@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import { isInteger, capitalizeFirstLetter } from 'utils/helpers';
+import { isInteger, capitalizeFirstLetter } from 'liphu-ui/utils/helpers';
 
 const defaultName = 'LpCol';
 

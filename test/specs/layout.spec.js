@@ -1,35 +1,130 @@
-import { createVue, destroyVM } from '../helpers';
+import { mount } from '@vue/test-utils';
+import { Layout, Header, Footer, Aside, Content } from 'liphu-ui';
 
 describe('Layout', () => {
-	let vm;
+	let wrapper;
 
 	afterEach(() => {
-		destroyVM(vm);
+		wrapper.destroy();
 	});
 
 	it('Create', () => {
-		vm = createVue(
-			{
-				template: '<lp-layout></lp-layout>'
-			},
-			true
-		);
+		wrapper = mount(Layout);
 
-		let layout = vm.$el;
-
-		expect(layout.classList.contains('lp-layout')).toBe(true);
+		expect(wrapper.classes()).contains('lp-layout');
 	});
 
 	it('Direction', () => {
-		vm = createVue(
-			{
-				template: '<lp-layout direction="vertical"></lp-layout>'
-			},
-			true
+		wrapper = mount(Layout, {
+			propsData: {
+				direction: 'vertical'
+			}
+		});
+
+		expect(wrapper.classes()).contains('lp-layout');
+		expect(wrapper.classes()).contains('lp-layout-vertical');
+		expect(wrapper.vm.$options.props.direction.validator('diagonal')).to.be
+			.false;
+	});
+});
+
+describe('Header', () => {
+	let wrapper;
+
+	afterEach(() => {
+		wrapper.destroy();
+	});
+
+	it('Create', () => {
+		wrapper = mount(Header, {
+			slots: {
+				default: 'Header'
+			}
+		});
+
+		expect(wrapper.classes()).contains('lp-header');
+		expect(wrapper.element.innerHTML).to.equal('Header');
+	});
+});
+
+describe('Content', () => {
+	let wrapper;
+
+	afterEach(() => {
+		wrapper.destroy();
+	});
+
+	it('Create', () => {
+		wrapper = mount(Content, {
+			slots: {
+				default: 'Content'
+			}
+		});
+
+		expect(wrapper.classes()).contains('lp-content');
+		expect(wrapper.element.innerHTML).to.equal('Content');
+	});
+});
+
+describe('Footer', () => {
+	let wrapper;
+
+	afterEach(() => {
+		wrapper.destroy();
+	});
+
+	it('Create', () => {
+		wrapper = mount(Footer, {
+			slots: {
+				default: 'Footer'
+			}
+		});
+
+		expect(wrapper.classes()).contains('lp-footer');
+		expect(wrapper.element.innerHTML).to.equal('Footer');
+	});
+});
+
+describe('Aside', () => {
+	let wrapper;
+
+	afterEach(() => {
+		wrapper.destroy();
+	});
+
+	it('Create', () => {
+		wrapper = mount(Aside, {
+			slots: {
+				default: 'Aside'
+			}
+		});
+
+		expect(wrapper.classes()).contains('lp-aside');
+		expect(wrapper.find('div.lp-aside-content').element.innerHTML).to.equal(
+			'Aside'
 		);
+	});
 
-		let layout = vm.$el;
+	it('Width', () => {
+		wrapper = mount(Aside, {
+			propsData: {
+				width: 300
+			}
+		});
 
-		expect(layout.classList.contains('lp-layout-vertical')).toBe(true);
+		expect(wrapper.classes()).contains('lp-aside');
+		expect(wrapper.find('div.lp-aside').element.style.width).to.equal(
+			'300px'
+		);
+		expect(wrapper.find('div.lp-aside').element.style.minWidth).to.equal(
+			'300px'
+		);
+		expect(wrapper.find('div.lp-aside').element.style.maxWidth).to.equal(
+			'300px'
+		);
+		expect(wrapper.find('div.lp-aside').element.style.flex).to.equal(
+			'0 0 300px'
+		);
+		expect(wrapper.vm.width).to.equal(300);
 	});
 });

@@ -66,6 +66,7 @@ export default {};
 		min-height: map-get($container-max-widths, sm);
 		padding: 2rem;
 		box-shadow: $box-shadow-sm;
+		border: 1px solid $border-color;
 	}
 }
 </style>

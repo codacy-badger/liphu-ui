@@ -6,6 +6,10 @@ export function isInteger(value) {
 	return !isNaN(value) && Number(value) && Number.isInteger(Number(value));
 }
 
+export function isNumber(value) {
+	return !isNaN(value) && Number(value);
+}
+
 export function oneOf(value, array) {
 	return array.indexOf(value) !== -1;
 }

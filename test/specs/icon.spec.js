@@ -1,38 +1,39 @@
-import { createVue, destroyVM } from '../helpers';
+import { mount } from '@vue/test-utils';
+import { Icon } from 'liphu-ui';
 
 describe('Icon', () => {
-	let vm;
+	let wrapper;
 
 	afterEach(() => {
-		destroyVM(vm);
+		wrapper.destroy();
 	});
 
 	it('Create', () => {
-		vm = createVue(
-			{
-				template: `<lp-icon icon="home" />`
-			},
-			true
-		);
+		wrapper = mount(Icon, {
+			propsData: {
+				icon: 'home'
+			}
+		});
 
-		let icon = vm.$el;
-
-		expect(icon.classList.contains('lp-icon')).toBe(true);
-		expect(icon.classList.contains('lp-icon-home')).toBe(true);
+		expect(wrapper.props().icon).to.equal('home');
+		expect(wrapper.classes()).contains('lp-icon');
+		expect(wrapper.classes()).contains('lp-icon-home');
 	});
 
 	it('Size', () => {
-		vm = createVue(
-			{
-				template: `<lp-icon icon="home" size="sm" />`
-			},
-			true
-		);
+		wrapper = mount(Icon, {
+			propsData: {
+				icon: 'home',
+				size: 'sm'
+			}
+		});
 
-		let icon = vm.$el;
-
-		expect(icon.classList.contains('lp-icon')).toBe(true);
-		expect(icon.classList.contains('lp-icon-home')).toBe(true);
-		expect(icon.classList.contains('lp-icon-sm')).toBe(true);
+		expect(wrapper.props().icon).to.equal('home');
+		expect(wrapper.props().size).to.equal('sm');
+		expect(wrapper.classes()).contains('lp-icon');
+		expect(wrapper.classes()).contains('lp-icon-home');
+		expect(wrapper.classes()).contains('lp-icon-sm');
+		expect(wrapper.vm.$options.props.size.validator('string')).to.be.false;
+		expect(wrapper.vm.$options.props.size.validator('sm')).to.equal(true);
 	});
 });

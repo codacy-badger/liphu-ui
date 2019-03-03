@@ -48,6 +48,7 @@
 
 <script>
 const defaultName = 'LpCard';
+
 export default {
 	name: 'LpCard',
 	defaultName: defaultName,

@@ -33,15 +33,11 @@ module.exports = (config, path, WebpackBar) => ({
 	module: {
 		rules: [
 			{
-				test: /\.scss$/,
+				test: /\.(sa|sc|c)ss$/,
 				use: [
 					MiniCssExtractPlugin.loader,
-					{
-						loader: 'css-loader'
-					},
-					{
-						loader: 'postcss-loader'
-					},
+					'css-loader',
+					'postcss-loader',
 					{
 						loader: 'sass-loader',
 						options: {
@@ -51,15 +47,15 @@ module.exports = (config, path, WebpackBar) => ({
 								path.resolve(__dirname, '../site/src/assets')
 							],
 							data: `
-								@import '${path.resolve(
+								@import "${path.resolve(
 									__dirname,
 									'../src/assets/scss/helpers/_functions.scss'
-								)}';
-								@import '${path.resolve(__dirname, '../src/assets/scss/helpers/_mixins.scss')}';
-								@import '${path.resolve(
+								)}";
+								@import "${path.resolve(__dirname, '../src/assets/scss/helpers/_mixins.scss')}";
+								@import "${path.resolve(
 									__dirname,
 									'../src/assets/scss/helpers/_variables.scss'
-								)}';
+								)}";
 							`
 						}
 					}

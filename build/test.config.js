@@ -1,45 +1,47 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-
 const barConfig = {
-	name: 'Common',
-	color: '#3b79db'
+	name: 'Tests',
+	color: '#3b79db',
+	fancy: true,
+	profile: true
 };
 
 module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
-	mode: 'production',
+	mode: 'development',
 	entry: {
-		app: ['./src/index.js']
+		liphu: ['./src/index.js']
 	},
 	output: {
 		path: path.resolve(__dirname, '../dist'),
 		publicPath: '/dist/',
-		filename: 'liphu-ui.common.js',
-		chunkFilename: '[name].js',
-		libraryExport: 'default',
-		library: 'liphu-ui',
-		libraryTarget: 'commonjs2'
+		filename: '[name].js',
+		chunkFilename: '[id].js'
 	},
 	resolve: {
-		extensions: ['.js', '.vue', '.json', '.scss'],
-		alias: config.alias,
+		extensions: ['.js', '.vue', '.json', '.css', '.scss'],
+		alias: {
+			...config.alias,
+			vue$: 'vue/dist/vue.common.js'
+		},
 		modules: ['node_modules']
 	},
-	externals: config.externals,
+	stats: 'none',
 	performance: {
 		hints: false
 	},
-	stats: 'errors-only',
-	optimization: {
-		minimize: true,
-		mangleWasmImports: true
-	},
+	externals: config.vue,
 	module: {
 		rules: [
 			{
 				test: /\.(jsx?|babel|es6)$/,
 				include: process.cwd(),
 				exclude: config.jsexclude,
-				loader: 'babel-loader'
+				use: {
+					loader: 'babel-loader',
+					options: {
+						envName: 'test'
+					}
+				}
 			},
 			{
 				test: /\.vue$/,
@@ -51,21 +53,11 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 				}
 			},
 			{
-				test: /\.css$/,
-				loaders: ['style-loader', 'css-loader', 'postcss-loader']
-			},
-			{
 				test: /\.scss$/,
 				use: [
-					{
-						loader: 'style-loader'
-					},
-					{
-						loader: 'css-loader?-url'
-					},
-					{
-						loader: 'postcss-loader'
-					},
+					'style-loader',
+					'css-loader?-url',
+					'postcss-loader',
 					{
 						loader: 'sass-loader',
 						options: {
@@ -85,21 +77,33 @@ module.exports = (config, path, WebpackBar, VueLoaderPlugin) => ({
 				]
 			},
 			{
-				test: /\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
+				test: /\.css$/,
+				loaders: ['style-loader', 'css-loader?-url']
+			},
+			{
+				test: /\.(otf|ttf|woff2?|eot)$/,
 				loader: 'url-loader',
 				query: {
 					limit: 10000,
-					name: path.posix.join('static', '[name].[hash:7].[ext]')
+					name: path.resolve(__dirname, 'dist/fonts/[name].[ext]')
+				}
+			},
+			{
+				test: /\.(png|jpe?g|svg|gif)$/,
+				loader: 'url-loader',
+				query: {
+					limit: 10000,
+					name: path.resolve(__dirname, 'dist/images/[name].[ext]')
 				}
 			}
 		]
 	},
 	plugins: [
+		new VueLoaderPlugin(),
 		new WebpackBar(barConfig),
-		new CleanWebpackPlugin(['dist', 'site/dist'], {
+		new CleanWebpackPlugin(['test/coverage'], {
 			root: path.resolve(__dirname, '../'),
 			verbose: false
-		}),
-		new VueLoaderPlugin()
+		})
 	]
 });

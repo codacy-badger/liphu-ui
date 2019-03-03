@@ -1,14 +1,5 @@
 // Font-face definition for the 'FabricMDL2Icons' icon font
-$icon-font-family: 'themify';
-
-@font-face {
-	font-family: $icon-font-family;
-	src: url('~assets/fonts/themify.eot') format('eot'),
-		url('~assets/fonts/themify.woff') format('woff'),
-		url('~assets/fonts/themify.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
+$icon-font-family: 'lp-icons';
 
 // Sizes
 $icon-size-base: 1rem !default;
